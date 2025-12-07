@@ -164,13 +164,23 @@
               "icon": "lucide-list",
               "title": "Outline of Bienvenido"
             }
+          },
+          {
+            "id": "27e31423f9b719af",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "22e034da714c366d",
+  "active": "747f350aeb75fec5",
   "lastOpenFiles": [
     "Git/Configurar git en Lliurex.md",
     "Bienvenido.md",
