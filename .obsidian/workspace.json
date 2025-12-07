@@ -13,32 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git/Limpieza de commits.md",
+                "file": "Bienvenido.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Limpieza de commits"
-            }
-          }
-        ]
-      },
-      {
-        "id": "98e01ada8bca847f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "237078b369e59b30",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Git/Configurar git en Lliurex.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Configurar git en Lliurex"
+              "title": "Bienvenido"
             }
           }
         ]
@@ -114,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git/Configurar git en Lliurex.md",
+                "file": "Bienvenido.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Configurar git en Lliurex"
+              "title": "Backlinks for Bienvenido"
             }
           },
           {
@@ -133,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git/Configurar git en Lliurex.md",
+                "file": "Bienvenido.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Configurar git en Lliurex"
+              "title": "Outgoing links from Bienvenido"
             }
           },
           {
@@ -176,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git/Configurar git en Lliurex.md",
+                "file": "Bienvenido.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Configurar git en Lliurex"
+              "title": "Outline of Bienvenido"
             }
           }
         ]
@@ -204,10 +184,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "237078b369e59b30",
+  "active": "22e034da714c366d",
   "lastOpenFiles": [
-    "Bienvenido.md",
     "Git/Configurar git en Lliurex.md",
+    "Bienvenido.md",
     "Git/Limpieza de commits.md",
     "Carpeta1/_assets/Pasted image 20251207115002.png",
     "Git/_assets",
