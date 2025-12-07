@@ -33,12 +33,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "Git/Configurar git en Lliurex.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bienvenido"
+              "title": "Configurar git en Lliurex"
             }
           }
         ]
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "Git/Configurar git en Lliurex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Bienvenido"
+              "title": "Backlinks for Configurar git en Lliurex"
             }
           },
           {
@@ -133,12 +133,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "Git/Configurar git en Lliurex.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Bienvenido"
+              "title": "Outgoing links from Configurar git en Lliurex"
             }
           },
           {
@@ -176,13 +176,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "Git/Configurar git en Lliurex.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Bienvenido"
+              "title": "Outline of Configurar git en Lliurex"
             }
           }
         ]
@@ -204,8 +204,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "747f350aeb75fec5",
+  "active": "237078b369e59b30",
   "lastOpenFiles": [
+    "Bienvenido.md",
+    "Git/Configurar git en Lliurex.md",
     "Git/Limpieza de commits.md",
     "Carpeta1/_assets/Pasted image 20251207115002.png",
     "Git/_assets",
@@ -213,7 +215,6 @@
     "Carpeta1/images",
     "Pasted image 20251207114702.png",
     "Imágenes",
-    "Bienvenido.md",
     "Carpeta2",
     "Git"
   ]
