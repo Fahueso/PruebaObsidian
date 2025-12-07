@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Carpeta1/Ejemplo 1.md",
+                "file": "Git/Limpieza de commits.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ejemplo 1"
+              "title": "Limpieza de commits"
             }
           }
         ]
@@ -31,10 +31,14 @@
             "id": "237078b369e59b30",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Bienvenido.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bienvenido"
             }
           }
         ]
@@ -110,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Carpeta1/Ejemplo 1.md",
+                "file": "Bienvenido.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +124,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ejemplo 1"
+              "title": "Backlinks for Bienvenido"
             }
           },
           {
@@ -129,12 +133,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Carpeta1/Ejemplo 1.md",
+                "file": "Bienvenido.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Ejemplo 1"
+              "title": "Outgoing links from Bienvenido"
             }
           },
           {
@@ -172,13 +176,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Carpeta1/Ejemplo 1.md",
+                "file": "Bienvenido.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ejemplo 1"
+              "title": "Outline of Bienvenido"
             }
           }
         ]
@@ -200,17 +204,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "22e034da714c366d",
+  "active": "747f350aeb75fec5",
   "lastOpenFiles": [
+    "Git/Limpieza de commits.md",
     "Carpeta1/_assets/Pasted image 20251207115002.png",
-    "Carpeta1/Ejemplo 1.md",
-    "Carpeta1/_assets",
+    "Git/_assets",
     "Carpeta1/images/Pasted image 20251207114821.png",
     "Carpeta1/images",
     "Pasted image 20251207114702.png",
     "Imágenes",
-    "Welcome.md",
+    "Bienvenido.md",
     "Carpeta2",
-    "Carpeta1"
+    "Git"
   ]
 }
