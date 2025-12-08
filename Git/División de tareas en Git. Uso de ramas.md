@@ -1,6 +1,6 @@
 Este tutorial está pensado para el trabajo individual alternando roles. Instruye en el rol A de Integrador, y rol B de Programador.
 
-## Integrador genera el esqueleto y diseña las tareas
+## Generación del esqueleto y diseño de las tareas (Rol Integrador)
 
 Crea un proyecto Java en  IntelliJ, inicializando el repositorio. Recuerda, que de momento vamos a utilizar siempre la consola. 
 
@@ -117,11 +117,9 @@ Cada función a desarrollar se va a separar en el desarrollo empleando una nueva
 | 2     | Desarrollador | El mismo | `feature-borrar` | `borrarFruta()`       |
 | 3     | Desarrollador | El mismo | `feature-buscar` | `buscarFruta()`       |
 | 4     | Desarrollador | El mismo | `feature-contar` | `verCantidad()`       |
+Es importante el orden en el que se realizan las tareas, ya que como mínimo `añadirFruta` es necesario para que el `ArrayList` tenga elementos para probar.
 
-
-## Desarrollador trabaja en `feature-añadir` para la tarea 1. 
-
-### 2.1. Crear rama
+## Desarrollador trabaja en `feature-añadir` (Tarea 1). 
 
 El desarrollador se encuentra inicialmente en la rama `master`. No debe realizar los `commits` en esa rama, ya que el Integrador así lo ha decidido.
 
@@ -132,7 +130,6 @@ git checkout -b feature-añadir
 ```
 
 A partir de ahora los `commits` que realice el desarrollador no alteran la rama `master`, sino la rama `feature-añadir`
-### 2.2. Implementar función
 
 El programador completa el método `añadirFruta` asegurando que su funcionamiento es el que corresponde.
 ```java
@@ -148,4 +145,33 @@ public static void añadirFruta(ArrayList<String> frutas, Scanner sc) {
 }
 ```
 
-Para ello, adapta el `main` para llamar a dicho procedimiento
+Para ello, adapta el `switch`del `main`:
+
+```java
+case 2:
+    añadirFruta(frutas, sc);
+    break;
+```
+
+Una vez probado el buen funcionamiento de la tarea procedemos a realizar el `commit`
+
+```bash
+git add FrutasApp.java
+git commit -m "Implementada función añadirFruta"
+```
+
+El desarrollador da por terminada la tarea 1, cosa que notifica el Integrador.
+
+## Integrador trabaja en `feature-añadir` (Tarea 1). 
+
+Una vez notificado por parte del Desarrollador la finalización de la Tarea 1 el desarrollador realizará los siguientes pasos:
+
+Asegurarse que se encuentra en la rama `master`.
+
+```bash
+git checkout main
+```
+
+Mezclar el contenido de la rama `feature-añadir`:
+
+
