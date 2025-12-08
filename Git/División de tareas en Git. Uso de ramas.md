@@ -114,9 +114,9 @@ Cada función a desarrollar se va a separar en el desarrollo empleando una nueva
 | Tarea | Rol           | Alumno   | Rama             | Función a implementar |
 | ----- | ------------- | -------- | ---------------- | --------------------- |
 | 1     | Desarrollador | El mismo | `feature-añadir` | `añadirFruta()`       |
-| 2     | Desarrollador | El mismo | `feature-borrar` | `borrarFruta()`       |
-| 3     | Desarrollador | El mismo | `feature-buscar` | `buscarFruta()`       |
-| 4     | Desarrollador | El mismo | `feature-contar` | `verCantidad()`       |
+| 2     | Desarrollador | ???      | `feature-borrar` | `borrarFruta()`       |
+| 3     | Desarrollador | ???      | `feature-buscar` | `buscarFruta()`       |
+| 4     | Desarrollador | ???      | `feature-contar` | `verCantidad()`       |
 Es importante el orden en el que se realizan las tareas, ya que como mínimo `añadirFruta` es necesario para que el `ArrayList` tenga elementos para probar.
 
 ## Desarrollador trabaja en `feature-añadir` (Tarea 1). 
@@ -174,4 +174,38 @@ git checkout main
 
 Mezclar el contenido de la rama `feature-añadir`:
 
+```bash
+git merge feature-añadir
+```
 
+Revisa si hay mensajes de conflicto. Si los hubiera tendríamos que revisar cuál es el problema editando el archivo `FrutasApp.java`. Una vez arreglado el conflicto procedería a llevar los cambios hasta el correspondiente `commit`.
+
+Una vez verificado el funcionamiento del código, la rama ya no se necesita por lo que el Integrador procede a eliminarla:
+
+```bash
+git branch -d feature-añadir
+```
+
+Además, dado que se trata de un hito *importante* en el desarrollo genera un tag:
+
+```bash
+git tag v1.1-añadir-integrado
+```
+
+## Integrador planifica el reparto del resto de tareas
+
+Hasta ahora Integrador y Desarrollador eran roles que realizaba una misma persona. Esto no es una manera eficiente de trabajar, ya que en este caso, las diferentes tareas pueden ser realizada por un equipo que trabaja en paralelo.
+Para ello es necesario tener un repositorio compartido en `GitHub`. Supongamos que ha generado un repositorio colaborativo con la siguiente URL: 
+
+`https://github.com/tu-usuario/frutas-colaborativo.git`
+
+A continuación decide subir el contenido de todo el trabajo realizado hasta ahora. Esto sólo lo tendrá que hacer una vez:
+
+```bash
+# Añadir el remoto (solo la primera vez)
+git remote add origin https://github.com/tu-usuario/frutas-colaborativo.git
+
+# Subir el esqueleto y la etiqueta
+git push -u origin main
+git push origin v1.0-esqueleto
+```
