@@ -1,8 +1,11 @@
 En este repositorio encontrarás información complementaria al uso de git:
 
-* [[Configuración básica de Git]]
-* [[Tutorial ejercicio individual ArrayList con Git]]
-* [[División de tareas en Git. Uso de ramas]]
-* [[Limpieza de commits]]
+Apuntes iniciales:
+[[Inicio | Curso básico de Git](https://jrpellicer.github.io/git/)]()
+
+* [[1 Configuración básica de Git]]
+* [[2 Tutorial ejercicio individual ArrayList con Git]]
+* [[3 División de tareas en Git. Uso de ramas]]
+* [[4 Limpieza de commits]]
 
 
