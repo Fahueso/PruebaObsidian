@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git/Tutorial ejercicio individual ArrayList con Git.md",
+                "file": "Git/División de tareas en Git. Uso de ramas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tutorial ejercicio individual ArrayList con Git"
+              "title": "División de tareas en Git. Uso de ramas"
             }
           }
         ]
@@ -196,8 +196,10 @@
   },
   "active": "22e034da714c366d",
   "lastOpenFiles": [
-    "Git/Empezando con git en Programación DAW.md",
+    "Git/Rol integrador en proyectos con GIT.md",
+    "Git/División de tareas en Git. Uso de ramas.md",
     "Git/Tutorial ejercicio individual ArrayList con Git.md",
+    "Git/Empezando con git en Programación DAW.md",
     "Git/Limpieza de commits.md",
     "Git/Configurar git en Lliurex.md",
     "Bienvenido.md",
@@ -238,8 +240,6 @@
     "quartz-site/docs/plugins/GitHubFlavoredMarkdown.md",
     "quartz-site/docs/plugins/Frontmatter.md",
     "quartz-site/docs/plugins/FolderPage.md",
-    "quartz-site/docs/plugins/Favicon.md",
-    "quartz-site/docs/plugins/ExplicitPublish.md",
     "quartz-site/docs/images/social-image-preview-light.png",
     "quartz-site/docs/images/social-image-preview-dark.png"
   ]
