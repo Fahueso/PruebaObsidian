@@ -1,0 +1,1213 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Limpieza%20de%20commits/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Tutorial ejercicio individual ArrayList con Git - Repositorio materiales GIT de Programación DAW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fase-1-crear-repositorio-local-y-primera-version" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Repositorio materiales GIT de Programación DAW" class="md-header__button md-logo" aria-label="Repositorio materiales GIT de Programación DAW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Repositorio materiales GIT de Programación DAW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial ejercicio individual ArrayList con Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Repositorio materiales GIT de Programación DAW" class="md-nav__button md-logo" aria-label="Repositorio materiales GIT de Programación DAW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Repositorio materiales GIT de Programación DAW
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuraci%C3%B3n%20b%C3%A1sica%20de%20Git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración básica de Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Divisi%C3%B3n%20de%20tareas%20en%20Git.%20Uso%20de%20ramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    División de tareas en Git. Uso de ramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Limpieza%20de%20commits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limpieza de commits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial ejercicio individual ArrayList con Git
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial ejercicio individual ArrayList con Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fase-1-crear-repositorio-local-y-primera-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FASE 1 – Crear repositorio local y primera versión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FASE 1 – Crear repositorio local y primera versión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-crear-proyecto-java-en-intellij" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Crear proyecto Java en IntelliJ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-inicializar-git-por-consola" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Inicializar Git (por consola)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-primer-commit-estructura-minima" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Primer commit – estructura mínima
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-2-anadir-menu-y-metodos-vacios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FASE 2 – Añadir menú y métodos vacíos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FASE 2 – Añadir menú y métodos vacíos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-crear-clase-gestordeudasjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Crear clase GestorDeudas.java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-segundo-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Segundo commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-3-programacion-opciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 FASE 3 – Programación Opciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 FASE 3 – Programación Opciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-implementar-cada-opcion-en-commits-separados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Implementar cada opción en commits separados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Implementar cada opción en commits separados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-a-metodo-anadir-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción A – Método añadir cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-d-listar-deudas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción D – Listar deudas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-c-consultar-saldo-de-un-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción C – Consultar saldo de un cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-e-eliminar-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción E – Eliminar cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-m-modificar-deuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opción M – Modificar deuda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historial-de-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historial de commits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-log-oneline-5f6g7h8-implementa-opcion-m-modificar-deuda-4e5f6g7-implementa-opcion-e-eliminar-cliente-3d4e5f6-implementa-opcion-c-consultar-saldo-cliente-2c3d4e5-implementa-opcion-d-listar-deudas-1b2c3d4-implementa-opcion-a-anadir-cliente-0a1b2c3-esqueleto-completo-menu-y-bloques-todo-en-main-be1c2d4-anade-esqueleto-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        $ git log --oneline 5f6g7h8 Implementa opción M: modificar deuda 4e5f6g7 Implementa opción E: eliminar cliente 3d4e5f6 Implementa opción C: consultar saldo cliente 2c3d4e5 Implementa opción D: listar deudas 1b2c3d4 Implementa opción A: añadir cliente 0a1b2c3 Esqueleto completo: menú y bloques TODO en main be1c2d4 Añade esqueleto del proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-4-deshacer-un-cambio-accidental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FASE 4 – Deshacer un cambio “accidental”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FASE 4 – Deshacer un cambio “accidental”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-simular-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Simular error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-ver-diferencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Ver diferencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-recuperar-version-del-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Recuperar versión del repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-5-subir-el-proyecto-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FASE 5 – Subir el proyecto a GitHub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FASE 5 – Subir el proyecto a GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-crear-repositorio-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Crear repositorio en GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-conectar-repositorio-local-con-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Conectar repositorio local con GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-subir-los-commits-al-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Subir los commits al remoto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-verificar-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Verificar en GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-simular-un-cambio-desde-otro-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Simular un cambio desde otro entorno
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Simular un cambio desde otro entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551-hacer-un-cambio-pequeno-desde-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.1 Hacer un cambio pequeño desde GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#552-traer-cambios-al-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.2 Traer cambios al local
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Tutorial ejercicio individual ArrayList con Git</h1>
+
+<p>Vamos a <strong>desarrollar el ejercicio en Java paso a paso</strong> mientras <strong>aprendemos Git por consola</strong>.<br />
+Así, vamos a lo largo del ejercicio las ayudas de GIT que nos va proponiendo IntelliJ, aunque más adelante sí las podremos utilizar.
+Recuerda inicializar tu ordenador, si no lo hiciste ya, con lo dispuesto en <a href="../Configuraci%C3%B3n%20b%C3%A1sica%20de%20Git/">Configuración básica de Git</a>.</p>
+<h2 id="fase-1-crear-repositorio-local-y-primera-version">FASE 1 – Crear repositorio local y primera versión<a class="headerlink" href="#fase-1-crear-repositorio-local-y-primera-version" title="Permanent link">&para;</a></h2>
+<h3 id="11-crear-proyecto-java-en-intellij">1.1 Crear proyecto Java en IntelliJ<a class="headerlink" href="#11-crear-proyecto-java-en-intellij" title="Permanent link">&para;</a></h3>
+<ul>
+<li>New Project → Java → Nombre: <code>GestorDeudas</code>.</li>
+</ul>
+<p>Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá el siguiente check, que no debes de pulsar, ya que como comentamos vamos a trabajar con la consola en este tutorial.</p>
+<p><img alt="Pasted image 20251208121344.png" src="../_assets/Pasted%20image%2020251208121344.png" /></p>
+<p>Se ha generado un fichero .gitignore con el siguiente contenido. </p>
+<div class="highlight"><pre><span></span><code>### IntelliJ IDEA ###  
+out/  
+!**/src/main/**/out/  
+!**/src/test/**/out/  
+
+### Eclipse ###  
+.apt_generated  
+.classpath  
+.factorypath  
+.project  
+.settings  
+.springBeans  
+.sts4-cache  
+bin/  
+!**/src/main/**/bin/  
+!**/src/test/**/bin/  
+
+### NetBeans ###  
+/nbproject/private/  
+/nbbuild/  
+/dist/  
+/nbdist/  
+/.nb-gradle/  
+
+### VS Code ###  
+.vscode/  
+
+### Mac OS ###  
+.DS_Store
+</code></pre></div>
+<p>Esto nos viene muy bien, dado que de esta manera no guardaremos en el Git todos los archivos que IntelliJ genera para la gestión del proyecto, y para sus compilados.</p>
+<p><strong>Como ya sabemos IntelliJ genera un fichero Main.java a efectos demostrativos. Como no lo necesitamos en este proyecto procedemos a borrarlo desde el IDE.</strong></p>
+<h3 id="12-inicializar-git-por-consola">1.2 Inicializar Git (por consola)<a class="headerlink" href="#12-inicializar-git-por-consola" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Moverse a la carpeta raíz del proyecto</span>
+<span class="nb">cd</span><span class="w"> </span>ruta/al/GestorDeudas
+
+<span class="c1"># Iniciar repo</span>
+git<span class="w"> </span>init
+</code></pre></div>
+<p>Con esto hemos generado el Entorno de Trabajo - Zona 1 (Working Directory) con el contenido actual de nuestro Proyecto.</p>
+<h3 id="13-primer-commit-estructura-minima">1.3 Primer commit – estructura mínima<a class="headerlink" href="#13-primer-commit-estructura-minima" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ver estado actual</span>
+git<span class="w"> </span>status
+</code></pre></div>
+<p><img alt="Pasted image 20251208122217.png" src="../_assets/Pasted%20image%2020251208122217.png" /></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>status
+</code></pre></div>
+<p><img alt="Pasted image 20251208122416.png" src="../_assets/Pasted%20image%2020251208122416.png" /></p>
+<p>Ahora todos estos archivos se encuentran en la Zona 2, o Zona de Preparación (Staging Area)</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Añade esqueleto del proyecto&quot;</span>
+</code></pre></div>
+<p><img alt="Pasted image 20251208122512.png" src="../_assets/Pasted%20image%2020251208122512.png" /></p>
+<p>Ahora, todos esos archivos se encuentran en el Repositorio (Zona 3).</p>
+<hr />
+<h2 id="fase-2-anadir-menu-y-metodos-vacios">FASE 2 – Añadir menú y métodos vacíos<a class="headerlink" href="#fase-2-anadir-menu-y-metodos-vacios" title="Permanent link">&para;</a></h2>
+<h3 id="21-crear-clase-gestordeudasjava">2.1 Crear clase <code>GestorDeudas.java</code><a class="headerlink" href="#21-crear-clase-gestordeudasjava" title="Permanent link">&para;</a></h3>
+<p>Creamos la clase GestorDeudas. De nuevo, si trabajamos con IntelliJ y la carpeta es un proyecto GIT, cada vez que creamos una clase nos saldrá una diálogo de este tipo:</p>
+<p><img alt="Pasted image 20251208123844.png" src="../_assets/Pasted%20image%2020251208123844.png" /></p>
+<p>De momento elegiremos la opción Cancel, por lo que más tarde añadiremos el fichero por consola.</p>
+<p>Esta primera versión de <code>GestorDeudas</code> solo vamos a programar el esqueleto del menú, y una serie de comentarios que indican el trabajo pendiente. Conforme resolvemos cada una de estas tareas, eliminaremos el comentario y actualizaremos nuestra versión.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestorDeudas</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">deudas</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">opc</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n--- MENÚ ---&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A) Añadir cliente&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;E) Eliminar cliente&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;D) Consultar listado&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C) Consultar saldo cliente&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;M) Modificar deuda&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;S) Salir&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Elige: &quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">opc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">toUpperCase</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">opc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="cm">/* TODO: añadir cliente */</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;E&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="cm">/* TODO: eliminar cliente */</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="cm">/* TODO: listar deudas */</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="cm">/* TODO: consultar cliente */</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;M&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="cm">/* TODO: modificar deuda */</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="sc">&#39;S&#39;</span><span class="p">:</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;¡Hasta luego!&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Opción no válida.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;S&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="22-segundo-commit">2.2 Segundo <code>commit</code><a class="headerlink" href="#22-segundo-commit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status<span class="w">          </span><span class="c1"># Aparecera src/ como archivo sin seguimiento</span>
+git<span class="w"> </span>add<span class="w"> </span>src/
+git<span class="w"> </span>status<span class="w">         </span><span class="c1"># Aparecerá src/GestorDeudas.java como archivo nuevo</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Esqueleto Completo: menú y bloques TODO en main&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="fase-3-programacion-opciones">🧩 FASE 3 – Programación Opciones<a class="headerlink" href="#fase-3-programacion-opciones" title="Permanent link">&para;</a></h2>
+<h3 id="31-implementar-cada-opcion-en-commits-separados">3.1 Implementar cada opción en commits separados<a class="headerlink" href="#31-implementar-cada-opcion-en-commits-separados" title="Permanent link">&para;</a></h3>
+<h4 id="opcion-a-metodo-anadir-cliente">Opción A – Método añadir cliente<a class="headerlink" href="#opcion-a-metodo-anadir-cliente" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Dentro de la clase, fuera de main</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">anyadirCliente</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clientes</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clientes</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">nombre</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: cliente ya existe.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Deuda inicial: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">deuda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
+<span class="w">    </span><span class="n">clientes</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="n">deudas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">deuda</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cliente añadido.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En <code>main</code>, dentro del <code>case 'A'</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="n">anyadirCliente</span><span class="p">(</span><span class="n">clientes</span><span class="p">,</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<p>Commit:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>src/
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementa opción A: añadir cliente&quot;</span>
+</code></pre></div></p>
+<p>El procedimiento se va a repetir para cada una de las funciones de este problema</p>
+<h4 id="opcion-d-listar-deudas">Opción D – Listar deudas<a class="headerlink" href="#opcion-d-listar-deudas" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">listarDeudas</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clientes</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">deudas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clientes</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No hay clientes.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n--- ESTADO DE DEUDAS ---&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%-15s %10s%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CLIENTE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEUDA&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;----------------------&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">clientes</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%-15s %10.2f €%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">clientes</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">deudas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">deudas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;----------------------&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;TOTAL DEUDA: %10.2f €%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En <code>main</code>, dentro del <code>case 'D'</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="n">listarDeudas</span><span class="p">(</span><span class="n">clientes</span><span class="p">,</span><span class="w"> </span><span class="n">deudas</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<p><code>Add</code> y <code>Commit</code> todo en uno:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Implementa opción D: listar deudas&quot;</span>
+</code></pre></div></p>
+<p>Dado que solo estamos modificando el archivo GestorDeudas.java, podemos usar <code>git commit -am</code> para ahorrar el paso intermedio de <code>git add</code>.</p>
+<h4 id="opcion-c-consultar-saldo-de-un-cliente">Opción C – Consultar saldo de un cliente<a class="headerlink" href="#opcion-c-consultar-saldo-de-un-cliente" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">consultarCliente</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clientes</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span>
+<span class="w">                                     </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clientes</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cliente no encontrado.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%s debe %.2f €%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">deudas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En <code>main</code>, dentro del <code>case 'C'</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="n">consultarCliente</span><span class="p">(</span><span class="n">clientes</span><span class="p">,</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Implementa opción C: consultar saldo cliente&quot;</span>
+</code></pre></div>
+<h4 id="opcion-e-eliminar-cliente">Opción E – Eliminar cliente<a class="headerlink" href="#opcion-e-eliminar-cliente" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eliminarCliente</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clientes</span><span class="p">,</span>
+<span class="w">                                    </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span>
+<span class="w">                                    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clientes</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cliente no encontrado.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">clientes</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">        </span><span class="n">deudas</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cliente eliminado.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En <code>main</code>, dentro del <code>case 'E'</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="sc">&#39;E&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="n">eliminarCliente</span><span class="p">(</span><span class="n">clientes</span><span class="p">,</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Implementa opción E: eliminar cliente&quot;</span>
+</code></pre></div>
+<h4 id="opcion-m-modificar-deuda">Opción M – Modificar deuda<a class="headerlink" href="#opcion-m-modificar-deuda" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">modificarDeuda</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clientes</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span>
+<span class="w">                                   </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Nombre: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clientes</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cliente no encontrado.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Nueva deuda: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nueva</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">());</span>
+<span class="w">    </span><span class="n">deudas</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">nueva</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Deuda actualizada.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En <code>main</code>, dentro del <code>case 'M'</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="sc">&#39;M&#39;</span><span class="p">:</span>
+<span class="w">    </span><span class="n">modificarDeuda</span><span class="p">(</span><span class="n">clientes</span><span class="p">,</span><span class="w"> </span><span class="n">deudas</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Implementa opción M: modificar deuda&quot;</span>
+</code></pre></div>
+<h4 id="historial-de-commits">Historial de commits<a class="headerlink" href="#historial-de-commits" title="Permanent link">&para;</a></h4>
+<h2 id="git-log-oneline-5f6g7h8-implementa-opcion-m-modificar-deuda-4e5f6g7-implementa-opcion-e-eliminar-cliente-3d4e5f6-implementa-opcion-c-consultar-saldo-cliente-2c3d4e5-implementa-opcion-d-listar-deudas-1b2c3d4-implementa-opcion-a-anadir-cliente-0a1b2c3-esqueleto-completo-menu-y-bloques-todo-en-main-be1c2d4-anade-esqueleto-del-proyecto"><div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+5f6g7h8<span class="w"> </span>Implementa<span class="w"> </span>opción<span class="w"> </span>M:<span class="w"> </span>modificar<span class="w"> </span>deuda
+4e5f6g7<span class="w"> </span>Implementa<span class="w"> </span>opción<span class="w"> </span>E:<span class="w"> </span>eliminar<span class="w"> </span>cliente
+3d4e5f6<span class="w"> </span>Implementa<span class="w"> </span>opción<span class="w"> </span>C:<span class="w"> </span>consultar<span class="w"> </span>saldo<span class="w"> </span>cliente
+2c3d4e5<span class="w"> </span>Implementa<span class="w"> </span>opción<span class="w"> </span>D:<span class="w"> </span>listar<span class="w"> </span>deudas
+1b2c3d4<span class="w"> </span>Implementa<span class="w"> </span>opción<span class="w"> </span>A:<span class="w"> </span>añadir<span class="w"> </span>cliente
+0a1b2c3<span class="w"> </span>Esqueleto<span class="w"> </span>completo:<span class="w"> </span>menú<span class="w"> </span>y<span class="w"> </span>bloques<span class="w"> </span>TODO<span class="w"> </span>en<span class="w"> </span>main
+be1c2d4<span class="w"> </span>Añade<span class="w"> </span>esqueleto<span class="w"> </span>del<span class="w"> </span>proyecto
+</code></pre></div><a class="headerlink" href="#git-log-oneline-5f6g7h8-implementa-opcion-m-modificar-deuda-4e5f6g7-implementa-opcion-e-eliminar-cliente-3d4e5f6-implementa-opcion-c-consultar-saldo-cliente-2c3d4e5-implementa-opcion-d-listar-deudas-1b2c3d4-implementa-opcion-a-anadir-cliente-0a1b2c3-esqueleto-completo-menu-y-bloques-todo-en-main-be1c2d4-anade-esqueleto-del-proyecto" title="Permanent link">&para;</a></h2>
+<h2 id="fase-4-deshacer-un-cambio-accidental">FASE 4 – Deshacer un cambio “accidental”<a class="headerlink" href="#fase-4-deshacer-un-cambio-accidental" title="Permanent link">&para;</a></h2>
+<h3 id="41-simular-error">4.1 Simular error<a class="headerlink" href="#41-simular-error" title="Permanent link">&para;</a></h3>
+<p>Un alumno borra sin querer el método <code>listarDeudas()</code> y guarda en IntelliJ</p>
+<h3 id="42-ver-diferencias">4.2 Ver diferencias<a class="headerlink" href="#42-ver-diferencias" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>diff<span class="w">          </span><span class="c1"># Muestra las línesa borradas en rojo</span>
+</code></pre></div>
+<h3 id="43-recuperar-version-del-repositorio">4.3 Recuperar versión del repositorio<a class="headerlink" href="#43-recuperar-version-del-repositorio" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>restore<span class="w"> </span>src/GestorDeudas.java
+</code></pre></div>
+<p>¡Perfecto! Vamos a añadir una <strong>Fase 5 – Subir el proyecto a GitHub</strong> usando la consola. Esto es ideal para que los alumnos aprendan a conectar su repositorio local con un remoto y practiquen <code>push</code>, <code>pull</code> y flujo colaborativo básico.</p>
+<hr />
+<h2 id="fase-5-subir-el-proyecto-a-github">FASE 5 – Subir el proyecto a GitHub<a class="headerlink" href="#fase-5-subir-el-proyecto-a-github" title="Permanent link">&para;</a></h2>
+<h3 id="51-crear-repositorio-en-github">5.1 Crear repositorio en GitHub<a class="headerlink" href="#51-crear-repositorio-en-github" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ir a <a href="https://github.com">https://github.com</a></li>
+<li>Hacer clic en <strong>"New repository"</strong></li>
+<li>Rellenar:</li>
+<li><strong>Repository name</strong>: <code>GestorDeudas</code></li>
+<li><strong>Description</strong>: (opcional) <em>Gestor de deudas en Java con Git por consola</em></li>
+<li><strong>Public</strong> o <strong>Private</strong> (según prefieras)</li>
+<li>
+<p><strong>NO</strong> marcar "Initialize this repository with a README" (ya tenemos nuestro propio historial)</p>
+</li>
+<li>
+<p>Hacer clic en <strong>"Create repository"</strong></p>
+</li>
+</ol>
+<p>GitHub te mostrará una pantalla con instrucciones. Vamos a usar la opción <strong>"…or push an existing repository from the command line"</strong>.</p>
+<hr />
+<h3 id="52-conectar-repositorio-local-con-github">5.2 Conectar repositorio local con GitHub<a class="headerlink" href="#52-conectar-repositorio-local-con-github" title="Permanent link">&para;</a></h3>
+<p>Desde la terminal, dentro de la carpeta del proyecto:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Añadir el remoto (sustituye TU_USUARIO por tu nombre de usuario)</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/TU_USUARIO/GestorDeudas.git
+
+<span class="c1"># Verificar que se ha añadido correctamente</span>
+git<span class="w"> </span>remote<span class="w"> </span>-v
+</code></pre></div>
+<hr />
+<h3 id="53-subir-los-commits-al-remoto">5.3 Subir los commits al remoto<a class="headerlink" href="#53-subir-los-commits-al-remoto" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Subir la rama master (o main, según tu versión de Git).</span>
+git<span class="w"> </span>branch<span class="w"> </span><span class="c1">## Consulta como se llama la rama main o  master</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+<blockquote>
+<p>Si es la primera vez que usas GitHub desde la terminal, puede pedirte autenticación.<br />
+Git ahora usa <strong>token de acceso personal (PAT)</strong> en lugar de contraseña.<br />
+Puedes generar uno en:<br />
+<a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
+</blockquote>
+<hr />
+<h3 id="54-verificar-en-github">5.4 Verificar en GitHub<a class="headerlink" href="#54-verificar-en-github" title="Permanent link">&para;</a></h3>
+<p>Recarga la página del repositorio en GitHub. Deberías ver:
+- Todos los archivos del proyecto
+- El historial de commits (<code>git log</code>)
+- El <code>.gitignore</code> correctamente aplicado</p>
+<hr />
+<h3 id="55-simular-un-cambio-desde-otro-entorno">5.5 Simular un cambio desde otro entorno<a class="headerlink" href="#55-simular-un-cambio-desde-otro-entorno" title="Permanent link">&para;</a></h3>
+<p>Cuando varias personas editan nuestro proyecto de Github llegará el momento que necesitemos llevar los cambios de los demás participantes a nuestro entorno de desarrollo. Vamos a simular un cambio de otro usuario, mediante una modificación desde GitHub.</p>
+<h4 id="551-hacer-un-cambio-pequeno-desde-github">5.5.1 Hacer un cambio pequeño desde GitHub<a class="headerlink" href="#551-hacer-un-cambio-pequeno-desde-github" title="Permanent link">&para;</a></h4>
+<ol>
+<li>En GitHub, editar el archivo <code>GestorDeudas.java</code></li>
+<li>Añadir un comentario al inicio:
+   <div class="highlight"><pre><span></span><code><span class="c1">// Proyecto: GestorDeudas - v1.0</span>
+</code></pre></div></li>
+<li>Hacer <code>commit</code> con el mensaje: <code>"Añade comentario de versión"</code></li>
+</ol>
+<h4 id="552-traer-cambios-al-local">5.5.2 Traer cambios al local<a class="headerlink" href="#552-traer-cambios-al-local" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "navigation.expand", "toc.integrate", "content.code.copy", "content.tabs.link", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
