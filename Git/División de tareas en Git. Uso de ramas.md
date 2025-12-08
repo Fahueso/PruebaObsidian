@@ -210,7 +210,7 @@ git push origin v1.0-esqueleto
 
 El Integrador añade al repositorio a los diferentes colaboradores del proyecto, escribiendo el nombre del correo del desarrollador o el nombre de usuario de `GitHub`. Para ello localiza el apartado `Settings > Collaborators> Add People`. Además se asegura que tenga rol de tipo `Write`, que les permite trabajar con sus ramas, sin administrar el repositorio.
 
-Es posible proteger que los colaboradores no modifique la rama `main`
+Es posible proteger que los colaboradores no modifique la rama `main`, para ello podemos estudiar el apartado `Settings>Rules>Rulesets` donde podemos especificar que los `commits` a esta rama necesitarán aprobación.
 
 Por último el Integrador comunica la URL del repositorio y publica las diferentes tareas a realizar. Organiza el trabajo para que los desarrolladores se repartan todas las tareas de manera eficiente.
 

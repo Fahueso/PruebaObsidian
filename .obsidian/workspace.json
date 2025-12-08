@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git/División de tareas en Git. Uso de ramas.md",
+                "file": "Git/Configuración básica de Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "División de tareas en Git. Uso de ramas"
+              "title": "Configuración básica de Git"
             }
           }
         ]
@@ -196,12 +196,12 @@
   },
   "active": "22e034da714c366d",
   "lastOpenFiles": [
-    "Git/Rol integrador en proyectos con GIT.md",
+    "Git/Limpieza de commits.md",
     "Git/División de tareas en Git. Uso de ramas.md",
+    "Git/Configuración básica de Git.md",
+    "Git/Rol integrador en proyectos con GIT.md",
     "Git/Tutorial ejercicio individual ArrayList con Git.md",
     "Git/Empezando con git en Programación DAW.md",
-    "Git/Limpieza de commits.md",
-    "Git/Configurar git en Lliurex.md",
     "Bienvenido.md",
     "Git/_assets/Pasted image 20251208123844.png",
     "Git/_assets/Pasted image 20251208122512.png",

@@ -2,8 +2,7 @@ Git viene instalado de serie en Lliurex.
 
 Sigue estos pasos para poner tu entorno de programación de DAW en marcha
 
-* Regístrate en Github, y crea un repositorio llamado ProgramacionDAW, usando tu cuenta institucional
-* Abre un terminal en Lliurex y escribe los siguientes comandos
+* Abre un terminal y escribe los siguientes comandos
 
 ```bash
 git config --global user.name "Nombre"
@@ -19,12 +18,18 @@ git config --global alias.a "add ."
 git config --global alias.c "commit -m"
 git config --global alias.p "push"
 ```
-* Para evitar problemas con saltos de línea en Linux
+* Para evitar problemas con saltos de línea en Linux:
+
 ```bash
 git config --global core.autocrlf input
 ```
-* Para evitar problemas con saltos de línea en Windows
+* Para evitar problemas con saltos de línea en Windows:
+
 ```bash
 git config --global core.autocrlf true
 ```
+* Para asegurarnos que la rama inicial se llame `main` en lugar de `master`:
 
+```bash
+git config --global init.defaultBranch main
+```
