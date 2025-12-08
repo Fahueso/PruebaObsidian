@@ -1,0 +1,38 @@
+site_name: Repositorio materiales GIT de Programación DAW
+theme:
+  name: material
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.magiclink
+  - pymdownx.betterem
+  - pymdownx.tilde
+  - pymdownx.tasklist
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.emoji
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.arithmatex
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.smartsymbols
+  - pymdownx.inlinehilite
+  - pymdownx.escapeall
+  - pymdownx.progressbar
+  - pymdownx.pathconverter:
+      base_path: docs
+      relative: true
+  - obsidian
+

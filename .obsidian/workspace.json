@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git/División de tareas en Git. Uso de ramas.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "División de tareas en Git. Uso de ramas"
+              "title": "index"
             }
           }
         ]
@@ -196,8 +196,11 @@
   },
   "active": "0ce5e3f8074c28b8",
   "lastOpenFiles": [
-    "Git/Configuración básica de Git.md",
     "Git/División de tareas en Git. Uso de ramas.md",
+    "docs/index.md",
+    "docs",
+    "mkdocs.yml",
+    "Git/Configuración básica de Git.md",
     "Git/Limpieza de commits.md",
     "index.md",
     "Git/_assets/Pasted image 20251208121344.png",
@@ -221,8 +224,6 @@
     "quartz-site/quartz/plugins/transformers/roam.ts",
     "quartz-site/quartz/plugins/transformers/oxhugofm.ts",
     "quartz-site/quartz/plugins/transformers/ofm.ts",
-    "quartz-site/quartz/plugins/transformers/links.ts",
-    "quartz-site/quartz/plugins/transformers/linebreaks.ts",
     "quartz-site/quartz/static/og-image.png",
     "quartz-site/quartz/static/icon.png",
     "quartz-site/docs/tags/plugin.md",
