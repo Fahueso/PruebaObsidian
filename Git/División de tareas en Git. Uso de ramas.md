@@ -186,16 +186,10 @@ Una vez verificado el funcionamiento del código, la rama ya no se necesita por 
 git branch -d feature-añadir
 ```
 
-Además, dado que se trata de un hito *importante* en el desarrollo genera un tag:
-
-```bash
-git tag v1.1-añadir-integrado
-```
-
 ## Integrador planifica el reparto del resto de tareas
 
 Hasta ahora Integrador y Desarrollador eran roles que realizaba una misma persona. Esto no es una manera eficiente de trabajar, ya que en este caso, las diferentes tareas pueden ser realizada por un equipo que trabaja en paralelo.
-Para ello es necesario tener un repositorio compartido en `GitHub`. Supongamos que ha generado un repositorio colaborativo con la siguiente URL: 
+Para ello es necesario tener un repositorio compartido en `GitHub`. Supongamos que ha generado un repositorio **público** colaborativo con la siguiente URL: 
 
 `https://github.com/tu-usuario/frutas-colaborativo.git`
 
@@ -205,7 +199,20 @@ A continuación decide subir el contenido de todo el trabajo realizado hasta aho
 # Añadir el remoto (solo la primera vez)
 git remote add origin https://github.com/tu-usuario/frutas-colaborativo.git
 
-# Subir el esqueleto y la etiqueta
-git push -u origin main
+# Subir el esqueleto y la etiqueta que se creo de esqueleto
+git push -u origin master
 git push origin v1.0-esqueleto
+```
+
+Por último el Integrador comunica la URL del repositorio y publica las diferentes tareas a realizar. Organiza el trabajo para que los desarrolladores se
+
+## Desarrollador comienza la Tarea 2
+
+Este desarrollador es nuevo en el proyecto, por lo que necesita traerse a su PC el código fuente del repositorio.
+
+Para ello ejecuta:
+
+```bash
+git clone https://github.com/tu-usuario/frutas-colaborativo.git
+cd frutas-colaborativo
 ```
