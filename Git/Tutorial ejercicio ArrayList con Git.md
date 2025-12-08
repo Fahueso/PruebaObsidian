@@ -60,7 +60,7 @@ cd ruta/al/GestorDeudas
 git init
 ```
 
-Con esto hemos generado el Entorno de Trabajo (Working Directory) con el contenido actual de nuestro Proyecto.
+Con esto hemos generado el Entorno de Trabajo - Zona 1 (Working Directory) con el contenido actual de nuestro Proyecto.
 
 ### 1.3 Primer commit – estructura mínima
 ```bash
@@ -77,6 +77,8 @@ git status
 
 ![[Pasted image 20251208122416.png]]
 
+Ahora todos estos archivos se encuentran en la Zona 2, o Zona de Preparación (Staging Area)
+
 ```bash
 
 
@@ -86,11 +88,11 @@ git commit -m "Añade esqueleto del proyecto"
 
 ![[Pasted image 20251208122512.png]]
 
-Ahora, todos esos ar
+Ahora, todos esos archivos se encuentran en el Repositorio (Zona 3).
 
 ---
 
-## 🧩 FASE 2 – Añadir menú y opción “A” (30’)
+## FASE 2 – Añadir menú y métodos vacíos
 
 ### 2.1 Crear clase `GestorDeudas.java`
 ```java
@@ -98,76 +100,91 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GestorDeudas {
-    private static ArrayList<String> clientes = new ArrayList<>();
-    private static ArrayList<Double> deudas   = new ArrayList<>();
-    private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        ArrayList<String> clientes = new ArrayList<>();
+        ArrayList<Double> deudas   = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
         char opc;
         do {
-            mostrarMenu();
+            System.out.println("\n--- MENÚ ---");
+            System.out.println("A) Añadir cliente");
+            System.out.println("E) Eliminar cliente");
+            System.out.println("D) Consultar listado");
+            System.out.println("C) Consultar saldo cliente");
+            System.out.println("M) Modificar deuda");
+            System.out.println("S) Salir");
+            System.out.print("Elige: ");
             opc = sc.nextLine().toUpperCase().charAt(0);
+
             switch (opc) {
-                case 'A': añadirCliente(); break;
-                case 'S': System.out.println("¡Hasta luego!"); break;
-                default : System.out.println("Opción no válida.");
+                case 'A': {
+                    /* TODO: añadir cliente */
+                    break;
+                }
+                case 'E': {
+                    /* TODO: eliminar cliente */
+                    break;
+                }
+                case 'D': {
+                    /* TODO: listar deudas */
+                    break;
+                }
+                case 'C': {
+                    /* TODO: consultar cliente */
+                    break;
+                }
+                case 'M': {
+                    /* TODO: modificar deuda */
+                    break;
+                }
+                case 'S':
+                    System.out.println("¡Hasta luego!");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
             }
         } while (opc != 'S');
-    }
 
-    private static void mostrarMenu() {
-        System.out.println("\n--- MENÚ ---");
-        System.out.println("A) Añadir cliente");
-        System.out.println("S) Salir");
-        System.out.print("Elige: ");
-    }
-
-    private static void añadirCliente() {
-        System.out.print("Nombre: ");
-        String nombre = sc.nextLine();
-        if (clientes.contains(nombre)) {
-            System.out.println("Error: cliente ya existe.");
-            return;
-        }
-        System.out.print("Deuda inicial: ");
-        double deuda = Double.parseDouble(sc.nextLine());
-        clientes.add(nombre);
-        deudas.add(deuda);
-        System.out.println("Cliente añadido.");
+        // Limpieza
+        clientes.clear();
+        deudas.clear();
     }
 }
+       
 ```
 
 ### 2.2 Segundo commit
 ```bash
 git status          # src/.../GestorDeudas.java modificado
 git add src/
-git commit -m "Implementa menú y opción A (añadir cliente)"
+git commit -m "Esqueleto Completo: menú y bloques TODO en main"
 ```
 
 ---
 
-## 🧩 FASE 3 – Opciones E, D, C, M (45’)
+## 🧩 FASE 3 – Programación Opciones
 
 ### 3.1 Implementar cada opción en commits separados
 
-#### Opción D – Listado
+#### Opción A – Método añadir cliente
 ```java
-private static void listarDeudas() {
-    if (clientes.isEmpty()) {
-        System.out.println("No hay clientes.");
+// Dentro de la clase, fuera de main
+private static void anyadirCliente(ArrayList<String> clientes,
+                                  ArrayList<Double> deudas,
+                                  Scanner sc) {
+    System.out.print("Nombre: ");
+    String nombre = sc.nextLine();
+    if (clientes.contains(nombre)) {
+        System.out.println("Error: cliente ya existe.");
         return;
     }
-    double total = 0;
-    System.out.println("\n--- ESTADO DE DEUDAS ---");
-    System.out.printf("%-15s %10s%n", "CLIENTE", "DEUDA");
-    System.out.println("----------------------");
-    for (int i = 0; i < clientes.size(); i++) {
-        System.out.printf("%-15s %10.2f €%n", clientes.get(i), deudas.get(i));
-        total += deudas.get(i);
-    }
-    System.out.println("----------------------");
-    System.out.printf("TOTAL DEUDA: %10.2f €%n", total);
+    System.out.print("Deuda inicial: ");
+    double deuda = Double.parseDouble(sc.nextLine());
+    clientes.add(nombre);
+    deudas.add(deuda);
+    System.out.println("Cliente añadido.");
 }
 ```
 Añadir al switch: `case 'D': listarDeudas(); break;`
