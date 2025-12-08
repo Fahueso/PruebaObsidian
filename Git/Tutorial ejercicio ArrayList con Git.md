@@ -362,3 +362,80 @@ git diff          # Muestra las línesa borradas en rojo
 ```bash
 git restore src/GestorDeudas.java
 ```
+
+¡Perfecto! Vamos a añadir una **Fase 5 – Subir el proyecto a GitHub** usando la consola. Esto es ideal para que los alumnos aprendan a conectar su repositorio local con un remoto y practiquen `push`, `pull` y flujo colaborativo básico.
+
+---
+
+## FASE 5 – Subir el proyecto a GitHub
+
+### 5.1 Crear repositorio en GitHub
+
+1. Ir a [https://github.com](https://github.com)
+2. Hacer clic en **"New repository"**
+3. Rellenar:
+   - **Repository name**: `GestorDeudas`
+   - **Description**: (opcional) *Gestor de deudas en Java con Git por consola*
+   - **Public** o **Private** (según prefieras)
+   - **NO** marcar "Initialize this repository with a README" (ya tenemos nuestro propio historial)
+
+4. Hacer clic en **"Create repository"**
+
+GitHub te mostrará una pantalla con instrucciones. Vamos a usar la opción **"…or push an existing repository from the command line"**.
+
+---
+
+### 5.2 Conectar repositorio local con GitHub
+
+Desde la terminal, dentro de la carpeta del proyecto:
+
+```bash
+# Añadir el remoto (sustituye TU_USUARIO por tu nombre de usuario)
+git remote add origin https://github.com/TU_USUARIO/GestorDeudas.git
+
+# Verificar que se ha añadido correctamente
+git remote -v
+```
+
+---
+
+### 5.3 Subir los commits al remoto
+
+```bash
+# Subir la rama master (o main, según tu versión de Git).
+git branch ## Consulta como se llama la rama main o  master
+git push -u origin master
+```
+
+> Si es la primera vez que usas GitHub desde la terminal, puede pedirte autenticación.  
+> Git ahora usa **token de acceso personal (PAT)** en lugar de contraseña.  
+> Puedes generar uno en:  
+> [https://github.com/settings/tokens](https://github.com/settings/tokens)
+
+---
+
+### 5.4 Verificar en GitHub
+
+Recarga la página del repositorio en GitHub. Deberías ver:
+- Todos los archivos del proyecto
+- El historial de commits (`git log`)
+- El `.gitignore` correctamente aplicado
+
+---
+
+### 5.5 Simular un cambio desde otro entorno
+
+Cuando varias personas editan nuestro proyecto de Github llegará el momento que necesitemos llevar los cambios de los demás participantes a nuestro entorno de desarrollo. Vamos a simular un cambio de otro usuario, mediante una modificación desde GitHub.
+
+#### 5.5.1 Hacer un cambio pequeño desde GitHub
+1. En GitHub, editar el archivo `GestorDeudas.java`
+2. Añadir un comentario al inicio:
+   ```java
+   // Proyecto: GestorDeudas - v1.0
+   ```
+3. Hacer `commit` con el mensaje: `"Añade comentario de versión"`
+
+#### 5.5.2 Traer cambios al local
+```bash
+git pull origin master
+```
