@@ -77,9 +77,6 @@ git status
 Ahora todos estos archivos se encuentran en la Zona 2, o Zona de Preparación (Staging Area)
 
 ```bash
-
-
-# Confirmar
 git commit -m "Añade esqueleto del proyecto"
 ```
 
@@ -99,7 +96,7 @@ Creamos la clase GestorDeudas. De nuevo, si trabajamos con IntelliJ y la carpeta
 
 De momento elegiremos la opción Cancel, por lo que más tarde añadiremos el fichero por consola.
 
-Esta primera versión de `GestorDeudas` solo tiene el esqueleto del menú, y una serie de comentarios donde hay que realizar el trabajo pendiente. Conforme resolvemos cada una de estas tareas, eliminaremos el comentario y guardamos versión en GIT.
+Esta primera versión de `GestorDeudas` solo vamos a programar el esqueleto del menú, y una serie de comentarios que indican el trabajo pendiente. Conforme resolvemos cada una de estas tareas, eliminaremos el comentario y actualizaremos nuestra versión.
 
 ```java
 import java.util.ArrayList;
@@ -162,6 +159,7 @@ public class GestorDeudas {
 ```
 
 ### 2.2 Segundo commit
+
 
 ```bash
 git status          # Aparecera src/ como archivo sin seguimiento
@@ -278,9 +276,6 @@ case 'C':
 git commit -am "Implementa opción C: consultar saldo cliente"
 ```
 
-
-
-
 #### Opción E – Eliminar cliente
 ```java
 public static void eliminarCliente(ArrayList<String> clientes,
@@ -310,7 +305,6 @@ case 'E':
 ```bash
 git commit -am "Implementa opción E: eliminar cliente"
 ```
-
 
 #### Opción M – Modificar deuda
 ```java
@@ -343,57 +337,31 @@ case 'M':
 git commit -am "Implementa opción M: modificar deuda"
 ```
 
-#### Opción M – Modificar deuda
+#### Historial de commits
 
+```bash
+$ git log --oneline
+5f6g7h8 Implementa opción M: modificar deuda
+4e5f6g7 Implementa opción E: eliminar cliente
+3d4e5f6 Implementa opción C: consultar saldo cliente
+2c3d4e5 Implementa opción D: listar deudas
+1b2c3d4 Implementa opción A: añadir cliente
+0a1b2c3 Esqueleto completo: menú y bloques TODO en main
+be1c2d4 Añade esqueleto del proyecto"
+```
 ---
 
-## 🧪 FASE 4 – Deshacer un cambio “accidental” (20’)
+## FASE 4 – Deshacer un cambio “accidental”
 
 ### 4.1 Simular error
-Un alumno borra sin querer el método `listarDeudas()` y guarda.
+Un alumno borra sin querer el método `listarDeudas()` y guarda en IntelliJ
 
 ### 4.2 Ver diferencias
 ```bash
-git diff          # Muestra la línea borrada en rojo
+git diff          # Muestra las línesa borradas en rojo
 ```
 
 ### 4.3 Recuperar versión del repositorio
 ```bash
 git restore src/GestorDeudas.java
 ```
-> 💡 **Zona 1** (Working Directory) vuelve al estado del último commit.
-
-### 4.4 Alternativa: deshacer último commit (si ya se había commiteado)
-```bash
-git reset --soft HEAD~1   # Mueve HEAD atrás, pero deja cambios en staging
-```
-
----
-
-## 🏁 FASE 5 – Ver historial y etiquetar (10’)
-
-```bash
-# Historial bonito
-git log --oneline --graph --decorate
-
-# Etiquetar versión entregable
-git tag v1.0 -m "Versión funcional completa"
-```
-
----
-
-## ✅ Resumen de comandos usados
-| Tarea | Comando |
-|-------|---------|
-| Iniciar repo | `git init` |
-| Ver estado | `git status` |
-| Preparar cambios | `git add <archivo>` o `git add .` |
-| Guardar commit | `git commit -m "mensaje"` |
-| Ver historial | `git log --oneline` |
-| Deshacer cambios en working | `git restore <archivo>` |
-| Deshacer último commit | `git reset --soft HEAD~1` |
-| Etiquetar | `git tag v1.0 -m "mensaje"` |
-
----
-
-¿Quieres que prepare un **script de solución** (`solucion.md`) con todo el código final por si alguien se pierde?
