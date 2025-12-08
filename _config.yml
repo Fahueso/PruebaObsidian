@@ -1,3 +1,8 @@
 title: Apuntes GIT Programación DAW
 description: Documentación en Markdown curso 25/26
-theme: minima
+theme: just-the-docs
+
+# Opciones del theme
+just_the_docs:
+  search_enabled: true
+  color_scheme: light
