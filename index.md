@@ -4,5 +4,5 @@ En este repositorio encontrarás información complementaria al uso de git
 * [[Tutorial ejercicio individual ArrayList con Git]]
 * [[Tutorial ejercicio individual ArrayList con Git]]
 
-Gracias por la atención
+
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Git/División de tareas en Git. Uso de ramas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "División de tareas en Git. Uso de ramas"
             }
           }
         ]
@@ -197,11 +197,13 @@
   "active": "0ce5e3f8074c28b8",
   "lastOpenFiles": [
     "index.md",
-    "_config.yml.md",
     "Git/Configuración básica de Git.md",
+    "Git/_assets/Pasted image 20251208121344.png",
+    "Git/Empezando con git en Programación DAW.md",
+    "Git/_assets/Pasted image 20251208122217.png",
+    "_config.yml.md",
     "quartz-site/docs/plugins/RemoveDrafts.md",
     "Git/División de tareas en Git. Uso de ramas.md",
-    "Git/Empezando con git en Programación DAW.md",
     "Git/Limpieza de commits.md",
     "Git/Tutorial ejercicio individual ArrayList con Git.md",
     "Git/Rol integrador en proyectos con GIT.md",
@@ -209,8 +211,6 @@
     "Git/_assets/Pasted image 20251208122512.png",
     "Git/_assets/Pasted image 20251208122453.png",
     "Git/_assets/Pasted image 20251208122416.png",
-    "Git/_assets/Pasted image 20251208122217.png",
-    "Git/_assets/Pasted image 20251208121344.png",
     "quartz-site/content/Limpieza de commits.md",
     "quartz-site/content/Configurar git en Lliurex.md",
     "quartz-site/content/_assets",
@@ -239,7 +239,6 @@
     "quartz-site/docs/plugins/index.md",
     "quartz-site/docs/plugins/HardLineBreaks.md",
     "quartz-site/docs/plugins/GitHubFlavoredMarkdown.md",
-    "quartz-site/docs/plugins/Frontmatter.md",
     "quartz-site/docs/images/social-image-preview-light.png",
     "quartz-site/docs/images/social-image-preview-dark.png"
   ]

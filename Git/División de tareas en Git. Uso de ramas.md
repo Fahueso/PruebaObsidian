@@ -120,6 +120,7 @@ Cada función a desarrollar se va a separar en el desarrollo empleando una nueva
 | 2     | Desarrollador | ???      | `feature-borrar` | `borrarFruta()`       |
 | 3     | Desarrollador | ???      | `feature-buscar` | `buscarFruta()`       |
 | 4     | Desarrollador | ???      | `feature-contar` | `verCantidad()`       |
+
 Es importante el orden en el que se realizan las tareas, ya que como mínimo `añadirFruta` es necesario para que el `ArrayList` tenga elementos para probar.
 
 ## Desarrollador trabaja en `feature-añadir` (Tarea 1). 
