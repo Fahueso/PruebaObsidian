@@ -162,9 +162,11 @@ public class GestorDeudas {
 ```
 
 ### 2.2 Segundo commit
+
 ```bash
-git status          
+git status          # Aparecera src/ como archivo sin seguimiento
 git add src/
+git status         # Aparecerá src/GestorDeudas.java como archivo nuevo
 git commit -m "Esqueleto Completo: menú y bloques TODO en main"
 ```
 
@@ -177,7 +179,7 @@ git commit -m "Esqueleto Completo: menú y bloques TODO en main"
 #### Opción A – Método añadir cliente
 ```java
 // Dentro de la clase, fuera de main
-private static void anyadirCliente(ArrayList<String> clientes,
+public static void anyadirCliente(ArrayList<String> clientes,
                                   ArrayList<Double> deudas,
                                   Scanner sc) {
     System.out.print("Nombre: ");
@@ -198,19 +200,61 @@ En `main`, dentro del `case 'A'`:
 
 ```java
 case 'A':
-    añadirCliente(clientes, deudas, sc);
+    anyadirCliente(clientes, deudas, sc);
     break;
 ```
 
 Commit:
 ```bash
 git add src/
-git commit -m "Añade opción D: listar deudas"
+git commit -m "Implementa opción A: añadir cliente"
 ```
 
-#### Opción C – Consultar saldo
+El procedimiento se va a repetir para cada una de las funciones de este problema
+
+
+#### Opción D – Listar deudas
 ```java
-private static void consultarCliente() {
+public static void listarDeudas(ArrayList<String> clientes,
+                                 ArrayList<Double> deudas) {
+    if (clientes.isEmpty()) {
+        System.out.println("No hay clientes.");
+        return;
+    }
+    double total = 0;
+    System.out.println("\n--- ESTADO DE DEUDAS ---");
+    System.out.printf("%-15s %10s%n", "CLIENTE", "DEUDA");
+    System.out.println("----------------------");
+    for (int i = 0; i < clientes.size(); i++) {
+        System.out.printf("%-15s %10.2f €%n", clientes.get(i), deudas.get(i));
+        total += deudas.get(i);
+    }
+    System.out.println("----------------------");
+    System.out.printf("TOTAL DEUDA: %10.2f €%n", total);
+}
+```
+
+En `main`, dentro del `case 'D'`:
+
+```java
+case 'D':
+    listarDeudas(clientes, deudas);
+    break;
+```
+
+`Add` y `Commit` todo en uno:
+```bash
+git commit -am "Implementa opción D: listar deudas"
+```
+
+En este caso hemos como sabemos que solo vamos a modificar un fichero a lo largo de este programa podemos utilizar `-am` como parámetro del `commit` . De esta manera podemos ir más rápido.
+
+
+#### Opción C – Consultar saldo de un cliente
+```java
+private static void consultarCliente(ArrayList<String> clientes,
+                                     ArrayList<Double> deudas,
+                                     Scanner sc) {
     System.out.print("Nombre: ");
     String nombre = sc.nextLine();
     int idx = clientes.indexOf(nombre);
@@ -221,15 +265,27 @@ private static void consultarCliente() {
     }
 }
 ```
-Commit:
-```bash
-git commit -am "Añade opción C: consultar saldo de un cliente"
-```
-> `-am` es atajo de `add` + `commit` cuando ya se ha hecho `add` antes.
 
-#### Opción E – Eliminar
+En `main`, dentro del `case 'C'`:
+
 ```java
-private static void eliminarCliente() {
+case 'C':
+    consultarCliente(clientes, deudas, sc);
+    break;
+```
+
+```bash
+git commit -am "Implementa opción C: consultar saldo cliente"
+```
+
+
+
+
+#### Opción E – Eliminar cliente
+```java
+public static void eliminarCliente(ArrayList<String> clientes,
+                                    ArrayList<Double> deudas,
+                                    Scanner sc) {
     System.out.print("Nombre: ");
     String nombre = sc.nextLine();
     int idx = clientes.indexOf(nombre);
@@ -242,14 +298,25 @@ private static void eliminarCliente() {
     }
 }
 ```
-Commit:
-```bash
-git commit -am "Añade opción E: eliminar cliente"
+
+En `main`, dentro del `case 'E'`:
+
+```java
+case 'E':
+    eliminarCliente(clientes, deudas, sc);
+    break;
 ```
+
+```bash
+git commit -am "Implementa opción E: eliminar cliente"
+```
+
 
 #### Opción M – Modificar deuda
 ```java
-private static void modificarDeuda() {
+public static void modificarDeuda(ArrayList<String> clientes,
+                                   ArrayList<Double> deudas,
+                                   Scanner sc) {
     System.out.print("Nombre: ");
     String nombre = sc.nextLine();
     int idx = clientes.indexOf(nombre);
@@ -263,10 +330,20 @@ private static void modificarDeuda() {
     System.out.println("Deuda actualizada.");
 }
 ```
-Commit:
-```bash
-git commit -am "Añade opción M: modificar deuda"
+
+En `main`, dentro del `case 'M'`:
+
+```java
+case 'M':
+    modificarDeuda(clientes, deudas, sc);
+    break;
 ```
+
+```bash
+git commit -am "Implementa opción M: modificar deuda"
+```
+
+#### Opción M – Modificar deuda
 
 ---
 
