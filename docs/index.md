@@ -5,6 +5,3 @@ En este repositorio encontrarás información complementaria al uso de git:
 * [[Tutorial ejercicio individual ArrayList con Git]]
 
 
-
-
-
