@@ -150,15 +150,12 @@ public class GestorDeudas {
             }
         } while (opc != 'S');
 
-        // Limpieza
-        clientes.clear();
-        deudas.clear();
     }
 }
        
 ```
 
-### 2.2 Segundo commit
+### 2.2 Segundo `commit`
 
 
 ```bash
@@ -245,12 +242,12 @@ case 'D':
 git commit -am "Implementa opción D: listar deudas"
 ```
 
-En este caso hemos como sabemos que solo vamos a modificar un fichero a lo largo de este programa podemos utilizar `-am` como parámetro del `commit` . De esta manera podemos ir más rápido.
+Dado que solo estamos modificando el archivo GestorDeudas.java, podemos usar `git commit -am` para ahorrar el paso intermedio de `git add`.
 
 
 #### Opción C – Consultar saldo de un cliente
 ```java
-private static void consultarCliente(ArrayList<String> clientes,
+public static void consultarCliente(ArrayList<String> clientes,
                                      ArrayList<Double> deudas,
                                      Scanner sc) {
     System.out.print("Nombre: ");
@@ -347,7 +344,7 @@ $ git log --oneline
 2c3d4e5 Implementa opción D: listar deudas
 1b2c3d4 Implementa opción A: añadir cliente
 0a1b2c3 Esqueleto completo: menú y bloques TODO en main
-be1c2d4 Añade esqueleto del proyecto"
+be1c2d4 Añade esqueleto del proyecto
 ```
 ---
 
