@@ -204,11 +204,11 @@ git push -u origin master
 git push origin v1.0-esqueleto
 ```
 
-Por último el Integrador comunica la URL del repositorio y publica las diferentes tareas a realizar. Organiza el trabajo para que los desarrolladores se
+Por último el Integrador comunica la URL del repositorio y publica las diferentes tareas a realizar. Organiza el trabajo para que los desarrolladores se repartan todas las tareas de manera eficiente.
 
-## Desarrollador comienza la Tarea 2
+## Desarrollador comienza la Tarea X
 
-Este desarrollador es nuevo en el proyecto, por lo que necesita traerse a su PC el código fuente del repositorio.
+Supongamos que este desarrollador es nuevo en el proyecto, por lo que necesita traerse a su PC el código fuente del repositorio.
 
 Para ello ejecuta:
 
@@ -216,3 +216,46 @@ Para ello ejecuta:
 git clone https://github.com/tu-usuario/frutas-colaborativo.git
 cd frutas-colaborativo
 ```
+
+a partir de entonces ya puede generar su rama de trabajo para la tarea actual, partiendo del estado actual de la rama `master`:
+
+```bash
+git checkout -b feature-xxx
+```
+
+Realizará el desarrollo de la función asignada dentro de esta rama, y cuando termine subirá los cambios. Nótese que estamos generando una rama con el mismo nombre en `GitHub`:
+
+```bash
+git push -u origin feature-xxx
+```
+
+## Integrador desea procesar la tarea X
+
+El integrador es conocedor de que algún desarrollador ha completado una tarea de desarrollo, y tiene localizada la rama `feature-xxx`. Ahora realiza una serie de paso para llevar todo ese trabajo a la rama `master`.
+
+```bash
+# 1. Asegurarse de estar en main y tenerlo actualizado
+git checkout main
+git pull origin main
+
+# 2. Traer la rama del desarrollador (opcional, pero recomendable para revisar)
+git fetch origin feature-xxx
+git checkout feature-xxx          
+
+# 3. Probar la funcionalidad
+
+# 4. Volver a main y hacer el merge
+git checkout main
+git merge feature-xxx
+
+# 5. Resolver conflictos si los hay, luego confirmar el merge
+# (si no hay conflictos, Git crea el commit de merge automáticamente)
+
+# 6. Subir el resultado a GitHub
+git push origin main
+```
+
+
+## Integrador ya ha procesado todas las tareas
+
+Cuando todas las tareas ya se hayan integrado, es recomendable establecer un `tag`, ya que se trata de una
