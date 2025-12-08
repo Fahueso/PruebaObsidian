@@ -1,5 +1,8 @@
-Este tutorial está pensado para el trabajo individual alternando roles. Instruye en el rol A de Integrador, y rol B de Programador.
+Este tutorial está pensado para trabajar en dos fases:
+* Fase 1: trabajo individual alternando roles. Instruye en el rol A de Integrador, y rol B de Programador.
+* Fase 2: apertura al mundo colaborativo, permitiendo la entrada de múltiples programadores.
 
+# Fase 1
 ## Generación del esqueleto y diseño de las tareas (Rol Integrador)
 
 Crea un proyecto Java en  IntelliJ, inicializando el repositorio. Recuerda, que de momento vamos a utilizar siempre la consola. 
@@ -121,7 +124,7 @@ Es importante el orden en el que se realizan las tareas, ya que como mínimo `a�
 
 ## Desarrollador trabaja en `feature-añadir` (Tarea 1). 
 
-El desarrollador se encuentra inicialmente en la rama `master`. No debe realizar los `commits` en esa rama, ya que el Integrador así lo ha decidido.
+El desarrollador se encuentra inicialmente en la rama `main`. No debe realizar los `commits` en esa rama, ya que el Integrador así lo ha decidido.
 
 La tarea 1 requiere realizar el trabajo en la rama denominada 'feature-añadir'. Esta rama no está creada todavía por lo que vamos a ejecutar el comando para inicializar y posicionarse en dicha rama.
 
@@ -129,7 +132,7 @@ La tarea 1 requiere realizar el trabajo en la rama denominada 'feature-añadir'.
 git checkout -b feature-añadir
 ```
 
-A partir de ahora los `commits` que realice el desarrollador no alteran la rama `master`, sino la rama `feature-añadir`
+A partir de ahora los `commits` que realice el desarrollador no alteran la rama `main`, sino la rama `feature-añadir`
 
 El programador completa el método `añadirFruta` asegurando que su funcionamiento es el que corresponde.
 ```java
@@ -160,13 +163,13 @@ git add FrutasApp.java
 git commit -m "Implementada función añadirFruta"
 ```
 
-El desarrollador da por terminada la tarea 1, cosa que notifica el Integrador.
+El desarrollador da por terminada la tarea 1, cosa que notifica el Integrador. Nota: El desarrollador no crea ningún `tag`.
 
 ## Integrador trabaja en `feature-añadir` (Tarea 1). 
 
 Una vez notificado por parte del Desarrollador la finalización de la Tarea 1 el desarrollador realizará los siguientes pasos:
 
-Asegurarse que se encuentra en la rama `master`.
+Asegurarse que se encuentra en la rama `main`.
 
 ```bash
 git checkout main
@@ -186,7 +189,8 @@ Una vez verificado el funcionamiento del código, la rama ya no se necesita por 
 git branch -d feature-añadir
 ```
 
-## Integrador planifica el reparto del resto de tareas
+# Fase 2
+## Integrador planifica el reparto del resto de tareas para colaboradores
 
 Hasta ahora Integrador y Desarrollador eran roles que realizaba una misma persona. Esto no es una manera eficiente de trabajar, ya que en este caso, las diferentes tareas pueden ser realizada por un equipo que trabaja en paralelo.
 Para ello es necesario tener un repositorio compartido en `GitHub`. Supongamos que ha generado un repositorio **público** colaborativo con la siguiente URL: 
@@ -200,9 +204,13 @@ A continuación decide subir el contenido de todo el trabajo realizado hasta aho
 git remote add origin https://github.com/tu-usuario/frutas-colaborativo.git
 
 # Subir el esqueleto y la etiqueta que se creo de esqueleto
-git push -u origin master
+git push -u origin main
 git push origin v1.0-esqueleto
 ```
+
+El Integrador añade al repositorio a los diferentes colaboradores del proyecto, escribiendo el nombre del correo del desarrollador o el nombre de usuario de `GitHub`. Para ello localiza el apartado `Settings > Collaborators> Add People`. Además se asegura que tenga rol de tipo `Write`, que les permite trabajar con sus ramas, sin administrar el repositorio.
+
+Es posible proteger que los colaboradores no modifique la rama `main`
 
 Por último el Integrador comunica la URL del repositorio y publica las diferentes tareas a realizar. Organiza el trabajo para que los desarrolladores se repartan todas las tareas de manera eficiente.
 
@@ -217,7 +225,7 @@ git clone https://github.com/tu-usuario/frutas-colaborativo.git
 cd frutas-colaborativo
 ```
 
-a partir de entonces ya puede generar su rama de trabajo para la tarea actual, partiendo del estado actual de la rama `master`:
+a partir de entonces ya puede generar su rama de trabajo para la tarea actual, partiendo del estado actual de la rama `main`:
 
 ```bash
 git checkout -b feature-xxx
@@ -231,7 +239,7 @@ git push -u origin feature-xxx
 
 ## Integrador desea procesar la tarea X
 
-El integrador es conocedor de que algún desarrollador ha completado una tarea de desarrollo, y tiene localizada la rama `feature-xxx`. Ahora realiza una serie de paso para llevar todo ese trabajo a la rama `master`.
+El integrador es conocedor de que algún desarrollador ha completado una tarea de desarrollo, y tiene localizada la rama `feature-xxx`. Ahora realiza una serie de paso para llevar todo ese trabajo a la rama `main`.
 
 ```bash
 # 1. Asegurarse de estar en main y tenerlo actualizado
@@ -258,4 +266,9 @@ git push origin main
 
 ## Integrador ya ha procesado todas las tareas
 
-Cuando todas las tareas ya se hayan integrado, es recomendable establecer un `tag`, ya que se trata de una
+Cuando todas las tareas ya se hayan integrado, es recomendable establecer un `tag`, ya que se trata de una versión con funcionalidad completa. Para ello realiza los siguientes comandos:
+
+```bash
+git tag v1.0-final
+git push origin v1.0-final
+```
