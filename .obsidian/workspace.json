@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "Git/Empezando con git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bienvenido"
+              "title": "Empezando con git"
             }
           }
         ]
@@ -194,8 +194,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "747f350aeb75fec5",
+  "active": "22e034da714c366d",
   "lastOpenFiles": [
+    "Bienvenido.md",
+    "Git/Empezando con git.md",
     "quartz-site/content/Limpieza de commits.md",
     "quartz-site/content/Configurar git en Lliurex.md",
     "quartz-site/content/_assets",
@@ -232,8 +234,6 @@
     "quartz-site/docs/plugins/Description.md",
     "quartz-site/docs/plugins/CustomOgImages.md",
     "quartz-site/docs/plugins/CreatedModifiedDate.md",
-    "quartz-site/docs/plugins/CrawlLinks.md",
-    "quartz-site/docs/plugins/ContentIndex.md",
     "quartz-site/docs/images/social-image-preview-light.png",
     "quartz-site/docs/images/social-image-preview-dark.png",
     "quartz-site/docs/images/quartz-layout-tablet.png",
