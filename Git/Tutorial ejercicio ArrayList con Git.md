@@ -1,8 +1,5 @@
-Vamos a seguir paso a paso este tutorial sobre uno de los ejercicios que hemos resuelto en clase.
-
-Perfecto.  
 Vamos a **desarrollar el ejercicio en Java paso a paso** mientras **aprendemos Git por consola**.  
-Cada “paso Git” irá acompañado de un **mini-diagrama mental** y el comando exacto que deben teclear los alumnos en la terminal (fuera de IntelliJ, aunque el código lo editen dentro).
+Así, vamos a lo largo del ejercicio las ayudas de GIT que nos va proponiendo IntelliJ, aunque más adelante sí las podremos utilizar.
 
 ## FASE 1 – Crear repositorio y primera versión
 
@@ -10,7 +7,7 @@ Cada “paso Git” irá acompañado de un **mini-diagrama mental** y el comando
 
 - New Project → Java → Nombre: `GestorDeudas`.
 
-Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá el siguiente check, que no debes de pulsar, ya que vamos a trabajar con la consola para aprender mejor.
+Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá el siguiente check, que no debes de pulsar, ya que como comentamos vamos a trabajar con la consola en este tutorial.
 
 ![[Pasted image 20251208121344.png]]
 
@@ -95,6 +92,15 @@ Ahora, todos esos archivos se encuentran en el Repositorio (Zona 3).
 ## FASE 2 – Añadir menú y métodos vacíos
 
 ### 2.1 Crear clase `GestorDeudas.java`
+
+Creamos la clase GestorDeudas. De nuevo, si trabajamos con IntelliJ y la carpeta es un proyecto GIT, cada vez que creamos una clase nos saldrá una diálogo de este tipo:
+
+![[Pasted image 20251208123844.png]]
+
+De momento elegiremos la opción Cancel, por lo que más tarde añadiremos el fichero por consola.
+
+Esta primera versión de `GestorDeudas` solo tiene el esqueleto del menú, y una serie de comentarios donde hay que realizar el trabajo pendiente. Conforme resolvemos cada una de estas tareas, eliminaremos el comentario y guardamos versión en GIT.
+
 ```java
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -157,7 +163,7 @@ public class GestorDeudas {
 
 ### 2.2 Segundo commit
 ```bash
-git status          # src/.../GestorDeudas.java modificado
+git status          
 git add src/
 git commit -m "Esqueleto Completo: menú y bloques TODO en main"
 ```
@@ -187,7 +193,14 @@ private static void anyadirCliente(ArrayList<String> clientes,
     System.out.println("Cliente añadido.");
 }
 ```
-Añadir al switch: `case 'D': listarDeudas(); break;`
+
+En `main`, dentro del `case 'A'`:
+
+```java
+case 'A':
+    añadirCliente(clientes, deudas, sc);
+    break;
+```
 
 Commit:
 ```bash
