@@ -15,6 +15,42 @@ Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá el s
 ![[Pasted image 20251208121344.png]]
 
 Se ha generado un fichero .gitignore con el siguiente contenido. 
+
+```txt
+### IntelliJ IDEA ###  
+out/  
+!**/src/main/**/out/  
+!**/src/test/**/out/  
+  
+### Eclipse ###  
+.apt_generated  
+.classpath  
+.factorypath  
+.project  
+.settings  
+.springBeans  
+.sts4-cache  
+bin/  
+!**/src/main/**/bin/  
+!**/src/test/**/bin/  
+  
+### NetBeans ###  
+/nbproject/private/  
+/nbbuild/  
+/dist/  
+/nbdist/  
+/.nb-gradle/  
+  
+### VS Code ###  
+.vscode/  
+  
+### Mac OS ###  
+.DS_Store
+```
+
+Esto nos viene muy bien, dado que de esta manera no guardaremos en el Git todos los archivos que IntelliJ genera para la gestión del proyecto, y para sus compilados.
+
+**Como ya sabemos IntelliJ genera un fichero Main.java a efectos demostrativos. Como no lo necesitamos en este proyecto procedemos a borrarlo desde el IDE.**
 ### 1.2 Inicializar Git (por consola)
 ```bash
 # Moverse a la carpeta raíz del proyecto
@@ -23,20 +59,34 @@ cd ruta/al/GestorDeudas
 # Iniciar repo
 git init
 ```
-> 💡 **Zona 1** (Working Directory) ahora contiene `.idea/`, `src/`, `GestorDeudas.iml`, etc.
+
+Con esto hemos generado el Entorno de Trabajo (Working Directory) con el contenido actual de nuestro Proyecto.
 
 ### 1.3 Primer commit – estructura mínima
 ```bash
-# Ver estado
-git status          # Verás archivos “untracked”
+# Ver estado actual
+git status
+```
 
-# Añadir todo al staging
+![[Pasted image 20251208122217.png]]
+
+```bash 
 git add .
+git status
+```
+
+![[Pasted image 20251208122416.png]]
+
+```bash
+
 
 # Confirmar
 git commit -m "Añade esqueleto del proyecto"
 ```
-> 💡 Ahora el **snapshot** está en la **Zona 3** (Repository).
+
+![[Pasted image 20251208122512.png]]
+
+Ahora, todos esos ar
 
 ---
 
