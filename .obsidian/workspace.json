@@ -194,8 +194,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "747f350aeb75fec5",
+  "active": "0ce5e3f8074c28b8",
   "lastOpenFiles": [
+    "index.md",
+    "_config.yml.md",
     "Git/Configuración básica de Git.md",
     "quartz-site/docs/plugins/RemoveDrafts.md",
     "Git/División de tareas en Git. Uso de ramas.md",
@@ -203,7 +205,6 @@
     "Git/Limpieza de commits.md",
     "Git/Tutorial ejercicio individual ArrayList con Git.md",
     "Git/Rol integrador en proyectos con GIT.md",
-    "index.md",
     "Git/_assets/Pasted image 20251208123844.png",
     "Git/_assets/Pasted image 20251208122512.png",
     "Git/_assets/Pasted image 20251208122453.png",
@@ -239,7 +240,6 @@
     "quartz-site/docs/plugins/HardLineBreaks.md",
     "quartz-site/docs/plugins/GitHubFlavoredMarkdown.md",
     "quartz-site/docs/plugins/Frontmatter.md",
-    "quartz-site/docs/plugins/FolderPage.md",
     "quartz-site/docs/images/social-image-preview-light.png",
     "quartz-site/docs/images/social-image-preview-dark.png"
   ]
