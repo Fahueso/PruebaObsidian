@@ -247,7 +247,7 @@ El integrador es conocedor de que algún desarrollador ha completado una tarea d
 git checkout main
 git pull origin main
 
-# 2. Traer la rama del desarrollador (opcional, pero recomendable para revisar)
+# 2. Traer la rama del desarrollador
 git fetch origin feature-xxx
 git checkout feature-xxx          
 
@@ -264,6 +264,14 @@ git merge feature-xxx
 git push origin main
 ```
 
+## Integrador hace limpieza de la rama innecesaria
+
+Si las ramas ya no son necesarias el Integrador debería borrarlas
+
+```bash
+git branch -d feature-xxx
+git push origin --delete feature-xxx 
+```
 
 ## Integrador ya ha procesado todas las tareas
 
@@ -273,6 +281,7 @@ Cuando todas las tareas ya se hayan integrado, es recomendable establecer un `ta
 git tag v1.0-final
 git push origin v1.0-final
 ```
+
 
 ## Anexo: código fuente final
 
