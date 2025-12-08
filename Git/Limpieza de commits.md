@@ -27,8 +27,8 @@ git push -f origin main
 ```
 Además, si tenías un branch para tus desarrollos, deberías reiniciar tu rama
 ```bash
-git branch -D autosync
-git push origin --delete autosync
-git checkout -b autosync
-git push -u origin autosync
+git branch -D nombreRama
+git push origin --delete nombreRama
+git checkout -b nombreRama
+git push -u origin nombreRama
 ```

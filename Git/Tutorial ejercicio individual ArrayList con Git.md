@@ -1,7 +1,8 @@
 Vamos a **desarrollar el ejercicio en Java paso a paso** mientras **aprendemos Git por consola**.  
 Así, vamos a lo largo del ejercicio las ayudas de GIT que nos va proponiendo IntelliJ, aunque más adelante sí las podremos utilizar.
+Recuerda inicializar tu ordenador, si no lo hiciste ya, con lo dispuesto en [[Configuración básica de Git]].
 
-## FASE 1 – Crear repositorio y primera versión
+## FASE 1 – Crear repositorio local y primera versión
 
 ### 1.1 Crear proyecto Java en IntelliJ
 

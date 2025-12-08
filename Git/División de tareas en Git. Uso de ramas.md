@@ -1,6 +1,6 @@
 Este tutorial está pensado para trabajar en dos fases:
 * Fase 1: trabajo individual alternando roles. Instruye en el rol A de Integrador, y rol B de Programador.
-* Fase 2: apertura al mundo colaborativo, permitiendo la entrada de múltiples programadores.
+* Fase 2: apertura al mundo colaborativo, permitiendo la entrada de múltiples programadores. En clase, invitaremos al menos a un compañero a desarrollar nuestro proyecto:
 
 # Fase 1
 ## Generación del esqueleto y diseño de las tareas (Rol Integrador)
@@ -272,3 +272,6 @@ Cuando todas las tareas ya se hayan integrado, es recomendable establecer un `ta
 git tag v1.0-final
 git push origin v1.0-final
 ```
+
+## Anexo: código fuente final
+
