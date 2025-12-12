@@ -8,11 +8,10 @@ Recuerda inicializar Git en tu sesión de usuario. Si no lo hiciste ya, revisa l
 
 - New Project → Java → Nombre: `GestorDeudas`.
 
-Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá el siguiente check, que no debes de pulsar, ya que como comentamos vamos a trabajar con la consola en este tutorial.
-
+Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá un check bajo el nombre del proyecto. No lo pulsaremos para hacer el comando equivalente por consola.
 ![[Pasted image 20251208121344.png]]
 
-Se ha generado un fichero .gitignore con el siguiente contenido. 
+Una vez generado el proyecto Java observa el fichero .gitignore con el siguiente contenido. Este fichero marca los archivos que no se subirán al repositorio. Así, evitamos subir,  por ejemplo, los ficheros ejecutable.
 
 ```txt
 ### IntelliJ IDEA ###  
