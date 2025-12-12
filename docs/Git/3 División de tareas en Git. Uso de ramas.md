@@ -168,7 +168,7 @@ El desarrollador da por terminada la tarea 1, cosa que notifica el Integrador. N
 
 ## Integrador trabaja en `feature-añadir` (Tarea 1). 
 
-Una vez notificado por parte del Desarrollador la finalización de la Tarea 1 el desarrollador realizará los siguientes pasos:
+Una vez notificado por parte del Desarrollador la finalización de la Tarea 1 el integrador realizará los siguientes pasos:
 
 Asegurarse que se encuentra en la rama `main`.
 
