@@ -232,11 +232,12 @@ a partir de entonces ya puede generar su rama de trabajo para la tarea actual, p
 git checkout -b feature-xxx
 ```
 
-Realizará el desarrollo de la función asignada dentro de esta rama, y cuando termine subirá los cambios. Nótese que estamos generando una rama con el mismo nombre en `GitHub`:
+Realizará el desarrollo de la función asignada dentro de esta rama, y cuando termine subirá los cambios a su rama. Nótese que estamos generando una rama con el mismo nombre en `GitHub`:
 
 ```bash
 git push -u origin feature-xxx
 ```
+
 
 ## Integrador desea procesar la tarea X
 
@@ -263,6 +264,8 @@ git merge feature-xxx
 # 6. Subir el resultado a GitHub
 git push origin main
 ```
+
+En el paso de la mezcla es posible que surjan conflictos. En este caso, al trabajar varios usuarios con el mismo fichero,  e incluso dentro del mismo método,  existe un peligro potencial. En otro documento veremos como solventar estos conflictos. De momento los evitaremos evitando lanzar a los desarrolladores en paralelo. Así, evitamos modificar el mismo fichero por varias personas simultáneamente.
 
 ## Integrador hace limpieza de la rama innecesaria
 
