@@ -11,7 +11,7 @@ Recuerda inicializar Git en tu sesión de usuario. Si no lo hiciste ya, revisa l
 Si IntelliJ detecta que tienes Git instalado en tu ordenador, te aparecerá un check bajo el nombre del proyecto. No lo pulsaremos para hacer el comando equivalente por consola.
 ![[Pasted image 20251208121344.png]]
 
-Una vez generado el proyecto Java observa el fichero .gitignore con el siguiente contenido. Este fichero marca los archivos que no se subirán al repositorio. Así, evitamos subir,  por ejemplo, los ficheros ejecutable.
+Una vez generado el proyecto Java observa el fichero .gitignore con el siguiente contenido. Este fichero marca los archivos que no se subirán al repositorio.
 
 ```txt
 ### IntelliJ IDEA ###  
@@ -45,7 +45,7 @@ bin/
 .DS_Store
 ```
 
-Esto nos viene muy bien, dado que de esta manera no guardaremos en el Git todos los archivos que IntelliJ genera para la gestión del proyecto, y para sus compilados.
+Así, no guardaremos en el Git todos los archivos que IntelliJ genera para la gestión del proyecto, y para sus compilados.
 
 **Como ya sabemos IntelliJ genera un fichero Main.java a efectos demostrativos. Como no lo necesitamos en este proyecto procedemos a borrarlo desde el IDE.**
 ### 1.2 Inicializar Git (por consola)
