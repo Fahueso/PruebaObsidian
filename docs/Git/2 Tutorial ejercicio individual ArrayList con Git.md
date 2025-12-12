@@ -413,6 +413,13 @@ git push -u origin master
 > Puedes generar uno en:  
 > [https://github.com/settings/tokens](https://github.com/settings/tokens)
 
+Los tokens de grano fino nos van a permir generar un token para un repositorio concreto. En nuestro caso, como queremos más adelante hacer commits desde nuestro PC, hay que acordarse de elegir el repositorio correcto y añadir los permisos sobre Contenido, tanto en modo lectura como en modo escritura.
+Los tokens clasicos nos van a servir para autenticar en cualquiera de nuestros repositorios. Tenemos que elegir, por los menos los permisos del bloque repo.
+
+Asi, cuando hagamos por primera vez un `git push` nos pedirá nuestro nombre de usuario y nuestra contraseña, en este caso no es la contraseña de nuestra cuenta de github sino el token generado.
+
+Los tokens tienen caducidad y se pueden regenerar, cuando queremos incorporar el repositorio en otro equipo de desarrollo. 
+
 ---
 
 ### 5.4 Verificar en GitHub
