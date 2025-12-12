@@ -1,5 +1,5 @@
-Vamos a **desarrollar el ejercicio en Java paso a paso** mientras **aprendemos Git por consola**.  
-Así, evitaremos utilizar las herramientas de integración con Git que tiene IntelliJ
+Vamos a **desarrollar un ejercicio en Java paso a paso** mientras **aprendemos Git por consola**.  
+Por esta vez evitaremos utilizar las herramientas de integración con Git que tiene IntelliJ.
 Recuerda inicializar Git en tu sesión de usuario. Si no lo hiciste ya, revisa lo dispuesto en [[1 Configuración básica de Git]].
 
 ## FASE 1 – Crear repositorio local y primera versión
