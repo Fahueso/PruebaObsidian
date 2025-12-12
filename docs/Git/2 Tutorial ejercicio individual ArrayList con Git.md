@@ -168,7 +168,7 @@ git commit -m "Esqueleto Completo: menú y bloques TODO en main"
 
 ---
 
-## 🧩 FASE 3 – Programación Opciones
+## FASE 3 – Programación Opciones
 
 ### 3.1 Implementar cada opción en commits separados
 
@@ -364,7 +364,6 @@ git diff          # Muestra las línesa borradas en rojo
 git restore src/GestorDeudas.java
 ```
 
-¡Perfecto! Vamos a añadir una **Fase 5 – Subir el proyecto a GitHub** usando la consola. Esto es ideal para que los alumnos aprendan a conectar su repositorio local con un remoto y practiquen `push`, `pull` y flujo colaborativo básico.
 
 ---
 
