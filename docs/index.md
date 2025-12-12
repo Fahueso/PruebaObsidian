@@ -1,7 +1,7 @@
 En este repositorio encontrarás información complementaria al uso de git:
 
 Apuntes iniciales:
-[[Inicio | Curso básico de Git](https://jrpellicer.github.io/git/)]()
+https://jrpellicer.github.io/git/
 
 * [[1 Configuración básica de Git]]
 * [[2 Tutorial ejercicio individual ArrayList con Git]]
