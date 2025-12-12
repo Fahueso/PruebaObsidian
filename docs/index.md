@@ -8,4 +8,5 @@ Apuntes iniciales:
 * [[3 División de tareas en Git. Uso de ramas]]
 * [[4 Limpieza de commits]]
 
+Curso 2025/2026
 
