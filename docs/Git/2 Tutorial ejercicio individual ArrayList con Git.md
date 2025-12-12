@@ -91,13 +91,13 @@ Ahora, todos esos archivos se encuentran en el Repositorio (Zona 3).
 
 ### 2.1 Crear clase `GestorDeudas.java`
 
-Creamos la clase GestorDeudas. De nuevo, si trabajamos con IntelliJ y la carpeta es un proyecto GIT, cada vez que creamos una clase nos saldrá una diálogo de este tipo:
+Creamos la clase GestorDeudas. Si trabajamos con IntelliJ y la carpeta es un proyecto GIT, cada vez que creamos una clase nos saldrá una diálogo de este tipo:
 
 ![[Pasted image 20251208123844.png]]
 
-De momento elegiremos la opción Cancel, por lo que más tarde añadiremos el fichero por consola.
+De momento elegiremos la opción Cancel, y más tarde añadiremos el fichero por consola.
 
-Esta primera versión de `GestorDeudas` solo vamos a programar el esqueleto del menú, y una serie de comentarios que indican el trabajo pendiente. Conforme resolvemos cada una de estas tareas, eliminaremos el comentario y actualizaremos nuestra versión.
+En esta primera versión de `GestorDeudas` solo vamos a programar el esqueleto del menú, y una serie de comentarios que indican el trabajo pendiente. Conforme resolvemos cada una de estas tareas, eliminaremos el comentario y actualizaremos nuestra versión.
 
 ```java
 import java.util.ArrayList;
