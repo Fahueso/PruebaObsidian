@@ -457,8 +457,13 @@
 <p>Vamos a provocar  un conflicto al trabajar dos ramas <strong>la misma zona del código</strong>. Resolver dicho conflicto.
 Además en este ejercicio vamos a ver que cada desarrollador tiene la responsabilidad de comentar su trabajo.</p>
 <hr />
-<h1 id="1-codigo-base-master-branch"><strong>1. Código base (master branch)</strong><a class="headerlink" href="#1-codigo-base-master-branch" title="Permanent link">&para;</a></h1>
-<p>Partimos del archivo: <code>AlumnosApp.java</code>. El programa a realizar es un CRUD sobre un conjunto de alumnos</p>
+<h1 id="1-creacion-de-repositorio-y-codigo-inicial"><strong>1. Creación de repositorio y código inicial</strong><a class="headerlink" href="#1-creacion-de-repositorio-y-codigo-inicial" title="Permanent link">&para;</a></h1>
+<p>El integrador crea un repositorio vacío en <code>GitHub</code> llamado <code>ConflictoHashSet</code></p>
+<p>Procede a preparar el código fuente y las tareas de los desarrolladores:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TU-USUARIO/ConflictoHashSet.git
+<span class="nb">cd</span><span class="w"> </span>ConflictoHashSet
+</code></pre></div>
+<p>Generamos un proyecto en IntelliJ y generamos el archivo: <code>AlumnosApp.java</code>. El programa a realizar es un CRUD sobre un conjunto de alumnos</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
 
@@ -531,6 +536,10 @@ Además en este ejercicio vamos a ver que cada desarrollador tiene la responsabi
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>AlumnosApp.java
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Código base con funciones sin implementar&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
 <hr />
 <h1 id="2-reparto-de-tareas-en-ramas-featurexxx"><strong>2. Reparto de tareas en ramas feature‑XXX</strong><a class="headerlink" href="#2-reparto-de-tareas-en-ramas-featurexxx" title="Permanent link">&para;</a></h1>
 <p>Cada alumno crea su rama desde <code>main</code>:</p>
@@ -543,8 +552,34 @@ Además en este ejercicio vamos a ver que cada desarrollador tiene la responsabi
 <hr />
 <h1 id="3-cambios-que-deben-hacer-y-donde-estara-el-conflicto"><strong>3. Cambios que deben hacer (y dónde estará el conflicto)</strong><a class="headerlink" href="#3-cambios-que-deben-hacer-y-donde-estara-el-conflicto" title="Permanent link">&para;</a></h1>
 <h2 id="rama-1-feature-anadir">Rama 1: <code>feature-anadir</code><a class="headerlink" href="#rama-1-feature-anadir" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-anadir
-</code></pre></div>
+<p>Recupera el proyecto desde <code>GitHub</code>. Esta vez vamos a utilizar la utilidad de IntelliJ:</p>
+<ol>
+<li><strong>File → New → Project from Version Control</strong></li>
+<li>
+<p>En la ventana:</p>
+</li>
+<li>
+<p>URL: <code>https://github.com/TU-USUARIO/ConflictoHashSet.git</code></p>
+</li>
+<li>
+<p>Directory: donde quieran guardarlo</p>
+</li>
+<li>
+<p>Clic en <strong>Clone</strong></p>
+</li>
+</ol>
+<p>IntelliJ abrirá el proyecto automáticamente.</p>
+<p>Además puede crear su propia rama:</p>
+<p>En la esquina inferior derecha:</p>
+<ol>
+<li>Clic en el nombre de la rama (<code>main</code>)</li>
+<li>Seleccionar <strong>New Branch…</strong></li>
+<li>Escribir:<ul>
+<li><code>feature-anadir</code></li>
+</ul>
+</li>
+<li>Activar <strong>Checkout branch</strong> (para cambiarse a ella)</li>
+</ol>
 <p>Implementa la función <strong>case 1</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * Añade un alumno al conjunto si no existe previamente.</span>
@@ -561,11 +596,14 @@ Además en este ejercicio vamos a ver que cada desarrollador tiene la responsabi
 </code></pre></div>
 <p>Commit:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>AlumnosApp.java
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementada función añadir alumno&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementada funcionAnadir con Javadoc&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature-anadir
 </code></pre></div>
 <hr />
 <h2 id="rama-2-feature-borrar-esta-provocara-el-conflicto">Rama 2: <code>feature-borrar</code> (esta provocará el conflicto)<a class="headerlink" href="#rama-2-feature-borrar-esta-provocara-el-conflicto" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-borrar
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TU-USUARIO/ConflictoHashSet.git
+<span class="nb">cd</span><span class="w"> </span>ConflictoHashSet
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-borrar
 </code></pre></div>
 <p>Modifica <strong>case 1 también</strong>, accidentalmente (forzamos conflicto):</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
@@ -594,11 +632,14 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </code></pre></div>
 <p>Commit:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>AlumnosApp.java
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementada función borrar alumno&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementada funcionBorrar y cambio temporal en funcionAnadir&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature-borrar
 </code></pre></div>
 <hr />
 <h2 id="rama-3-feature-listar">Rama 3: <code>feature-listar</code><a class="headerlink" href="#rama-3-feature-listar" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-listar
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TU-USUARIO/ConflictoHashSet.git
+<span class="nb">cd</span><span class="w"> </span>ConflictoHashSet
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-listar
 </code></pre></div>
 <p>Modifica <strong>case 3</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
@@ -616,7 +657,8 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </code></pre></div>
 <p>Commit:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>AlumnosApp.java
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementada función listar alumnos&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Implementada funcionListar con Javadoc&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature-listar
 </code></pre></div>
 <hr />
 <h1 id="4-integracion-y-conflicto-garantizado"><strong>4. Integración y conflicto garantizado</strong><a class="headerlink" href="#4-integracion-y-conflicto-garantizado" title="Permanent link">&para;</a></h1>
