@@ -666,13 +666,14 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <p><img alt="Pasted image 20251214193238.png" src="../_assets/Pasted%20image%2020251214193238.png" /></p>
 <p>a partir de entonces ya puede generar su rama de trabajo para la tarea actual, partiendo del estado actual de la rama `main:</p>
 <p><img alt="Pasted image 20251214193624.png" src="../_assets/Pasted%20image%2020251214193624.png" /></p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-xxx
-</code></pre></div>
-<p>Realizará el desarrollo de la función asignada dentro de esta rama, y cuando termine subirá los cambios a su rama. Nótese que estamos generando una rama con el mismo nombre en <code>GitHub</code>:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>feature-xxx
-</code></pre></div>
+<p><img alt="Pasted image 20251214193746.png" src="../_assets/Pasted%20image%2020251214193746.png" /></p>
+<p>Esto posicionará la rama activa a la requerida. Realizará el desarrollo de la función asignada dentro de esta rama, y cuando termine subirá los cambios a su rama local y remota (Commit and Push). Nótese que automáticamente IntelliJ creará una rama del mismo nombre en Github dado que no existía inicialmente.</p>
+<p><img alt="Pasted image 20251214194018.png" src="../_assets/Pasted%20image%2020251214194018.png" /></p>
 <h2 id="integrador-desea-procesar-la-tarea-x">Integrador desea procesar la tarea X<a class="headerlink" href="#integrador-desea-procesar-la-tarea-x" title="Permanent link">&para;</a></h2>
 <p>El integrador es conocedor de que algún desarrollador ha completado una tarea de desarrollo, y tiene localizada la rama <code>feature-xxx</code>. Ahora realiza una serie de paso para llevar todo ese trabajo a la rama <code>main</code>.</p>
+<p><img alt="Pasted image 20251214194707.png" src="../_assets/Pasted%20image%2020251214194707.png" /></p>
+<p>Pulsa el botón <code>Fetch</code> y recupera la rama remota.</p>
+<p><img alt="Pasted image 20251214194739.png" src="../_assets/Pasted%20image%2020251214194739.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. Asegurarse de estar en main y tenerlo actualizado</span>
 git<span class="w"> </span>checkout<span class="w"> </span>main
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
