@@ -657,6 +657,9 @@ git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </s
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0-esqueleto
 </code></pre></div>
+<p>También vamos a indicar cómo añadir el remoto desde IntelliJ:</p>
+<p><img alt="Pasted image 20251214201502.png" src="../_assets/Pasted%20image%2020251214201502.png" /></p>
+<p>Esto permitirá conectarnos a GitHub, con nuestras credenciales y crear un nuevo repositorio.</p>
 <p>El Integrador añade al repositorio a los diferentes colaboradores del proyecto, escribiendo el nombre del correo del desarrollador o el nombre de usuario de <code>GitHub</code>. Para ello localiza el apartado <code>Settings &gt; Collaborators&gt; Add People</code>. Además se asegura que tenga rol de tipo <code>Write</code>, que les permite trabajar con sus ramas, sin administrar el repositorio.</p>
 <p>Es posible proteger que los colaboradores no modifique la rama <code>main</code>, para ello podemos estudiar el apartado <code>Settings&gt;Rules&gt;Rulesets</code> donde podemos especificar que los <code>commits</code> a esta rama necesitarán aprobación.</p>
 <p>Por último el Integrador comunica la URL del repositorio y publica las diferentes tareas a realizar. Organiza el trabajo para que los desarrolladores se repartan todas las tareas de manera eficiente.</p>
@@ -673,13 +676,14 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <p>Realizará el desarrollo de la función asignada dentro de esta rama, y cuando termine subirá los cambios a su rama local y remota (Commit and Push). Nótese que automáticamente IntelliJ creará una rama del mismo nombre en Github dado que no existía inicialmente.</p>
 <p><img alt="Pasted image 20251214194018.png" src="../_assets/Pasted%20image%2020251214194018.png" /></p>
 <h2 id="integrador-desea-procesar-la-tarea-x">Integrador desea procesar la tarea X<a class="headerlink" href="#integrador-desea-procesar-la-tarea-x" title="Permanent link">&para;</a></h2>
-<p>El integrador es conocedor de que algún desarrollador ha completado una tarea de desarrollo, y tiene localizada la rama <code>feature-xxx</code>. Ahora realiza una serie de paso para llevar todo ese trabajo a la rama <code>main</code>.</p>
+<p>El integrador es conocedor de que algún desarrollador ha completado una tarea de desarrollo, y tiene localizada en <code>GitHub</code> la rama <code>feature-xxx</code>. Ahora realiza una serie de pasos para localizarla en IntelliJ y para mezclar todo ese trabajo a la rama <code>main</code>.</p>
+<p>Actualmente el Integrador no tiene ninguna rama en su IntelliJ, excepto el <code>master</code>:</p>
 <p><img alt="Pasted image 20251214194707.png" src="../_assets/Pasted%20image%2020251214194707.png" /></p>
 <p>Pulsa el botón <code>Fetch</code> y recupera la rama remota.</p>
 <p><img alt="Pasted image 20251214194739.png" src="../_assets/Pasted%20image%2020251214194739.png" /></p>
-<p>Pulsa sobre <code>feature-listar</code> y hace checkout:</p>
+<p>Pulsa sobre <code>feature-listar</code> del remoto y hace checkout:</p>
 <p><img alt="Pasted image 20251214194915.png" src="../_assets/Pasted%20image%2020251214194915.png" /></p>
-<p>Probará el código fuente de la rama, y si este funciona, procederá al mezclado. Para ello, haremos checkout sobre <code>master</code> y haremos la mezcla:</p>
+<p>Probará el código fuente de la rama, y si este funciona, procederá al mezclado. Para ello, haremos checkout sobre <code>master</code> para posicionarnos en él, y una vez que lo tengamos arriba y haremos la mezcla:</p>
 <p><img alt="Pasted image 20251214195058.png" src="../_assets/Pasted%20image%2020251214195058.png" /></p>
 <p>Una vez mezclado podemos hacer <code>push</code> sobre la rama <code>master</code>:</p>
 <p><img alt="Pasted image 20251214195539.png" src="../_assets/Pasted%20image%2020251214195539.png" /></p>
@@ -688,7 +692,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <p><img alt="Pasted image 20251214195621.png" src="../_assets/Pasted%20image%2020251214195621.png" /></p>
 <p><img alt="Pasted image 20251214195657.png" src="../_assets/Pasted%20image%2020251214195657.png" /></p>
 <h2 id="integrador-ya-ha-procesado-todas-las-tareas">Integrador ya ha procesado todas las tareas<a class="headerlink" href="#integrador-ya-ha-procesado-todas-las-tareas" title="Permanent link">&para;</a></h2>
-<p>Cuando todas las tareas ya se hayan integrado, es recomendable establecer un <code>tag</code>, ya que se trata de una versión con funcionalidad completa.</p>
+<p>Cuando todas las tareas ya se hayan integrado, es recomendable establecer un <code>tag</code>, ya que se trata de una versión con funcionalidad completa. Mostramos como hacer un <code>tag</code> en IntelliJ.</p>
 <p><img alt="Pasted image 20251214195908.png" src="../_assets/Pasted%20image%2020251214195908.png" /></p>
 <h2 id="anexo-codigo-fuente-final">Anexo: código fuente final<a class="headerlink" href="#anexo-codigo-fuente-final" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
