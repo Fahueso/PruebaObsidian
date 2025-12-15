@@ -1,0 +1,245 @@
+{
+  "main": {
+    "id": "b7f9c58e611b95ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "2c18ee226ef81a71",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0ce5e3f8074c28b8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/Git/2 Tutorial ejercicio individual ArrayList con Git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2 Tutorial ejercicio individual ArrayList con Git"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ccc7eb7ff2981f43",
+    "type": "split",
+    "children": [
+      {
+        "id": "c41c8a413e137d5d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "747f350aeb75fec5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f3915f5cd3e26ddd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "abf45fa2ad44c324",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "aaa978fff161901c",
+    "type": "split",
+    "children": [
+      {
+        "id": "8559512bad3f1a55",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5a452ab2a7131bc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Bienvenido.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Bienvenido"
+            }
+          },
+          {
+            "id": "999da490e54027b0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Bienvenido.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Bienvenido"
+            }
+          },
+          {
+            "id": "b71ce9eed53ad9e2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3a4baf5fabb862d0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "644362e497845890",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Bienvenido.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Bienvenido"
+            }
+          },
+          {
+            "id": "27e31423f9b719af",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 298.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "0ce5e3f8074c28b8",
+  "lastOpenFiles": [
+    "docs/Git/3 División de tareas en Git. Uso de ramas.md",
+    "docs/Git/4 Gestión de alumnos con HashSet + Conflicto.md",
+    "docs/Git/5 Limpieza de commits.md",
+    "docs/Git/2 Tutorial ejercicio individual ArrayList con Git.md",
+    "docs/index.md",
+    "docs/Git/1 Configuración básica de Git.md",
+    "docs/Git/_assets/Pasted image 20251214201502.png",
+    "docs/Git/_assets/Pasted image 20251214200510.png",
+    "docs/Git/_assets/Pasted image 20251214195908.png",
+    "docs/Git/_assets/Pasted image 20251214195657.png",
+    "docs/Git/_assets/Pasted image 20251214195621.png",
+    "docs/Git/_assets/Pasted image 20251214195539.png",
+    "docs/Git/_assets/Pasted image 20251214195058.png",
+    "docs/Git/_assets/Pasted image 20251214194915.png",
+    "docs/Git/_assets/Pasted image 20251214194739.png",
+    "docs/Git/_assets/Pasted image 20251214194707.png",
+    "Nueva carpeta",
+    "site/search/search_index.json",
+    "site/search",
+    "site/Git/Tutorial ejercicio individual ArrayList con Git/index.html",
+    "site/Git/Tutorial ejercicio individual ArrayList con Git",
+    "site/Git/Limpieza de commits/index.html",
+    "site/Git/Limpieza de commits",
+    "site/Git/División de tareas en Git. Uso de ramas/index.html",
+    "site/Git/División de tareas en Git. Uso de ramas",
+    "site/Git/Configuración básica de Git/index.html",
+    "Git/Empezando con git en Programación DAW.md",
+    "_config.yml.md",
+    "quartz-site/docs/plugins/RemoveDrafts.md",
+    "Git/Rol integrador en proyectos con GIT.md",
+    "quartz-site/content/Limpieza de commits.md",
+    "quartz-site/content/Configurar git en Lliurex.md",
+    "quartz-site/docs/tags/plugin.md",
+    "quartz-site/docs/tags/component.md",
+    "quartz-site/docs/plugins/TagPage.md",
+    "quartz-site/docs/plugins/TableOfContents.md",
+    "quartz-site/docs/plugins/SyntaxHighlighting.md",
+    "quartz-site/docs/plugins/Static.md",
+    "quartz-site/docs/plugins/RoamFlavoredMarkdown.md",
+    "quartz-site/docs/plugins/OxHugoFlavoredMarkdown.md",
+    "quartz-site/docs/plugins/ObsidianFlavoredMarkdown.md",
+    "quartz-site/docs/plugins/NotFoundPage.md",
+    "quartz-site/docs/plugins/Latex.md",
+    "quartz-site/docs/plugins/index.md",
+    "quartz-site/docs/plugins/HardLineBreaks.md"
+  ]
+}
