@@ -1,0 +1,34 @@
+name: Deploy gitDAW to apuntes
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install mkdocs-material mkdocs-roamlinks-plugin
+
+      - name: Build site
+        run: mkdocs build --clean
+
+      - name: Deploy to apuntes
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.PORTAL_DEPLOY_KEY }}
+          external_repository: Fahueso/apuntes
+          publish_branch: main
+          publish_dir: ./site
+          keep_files: true
+          destination_dir: gitdaw
